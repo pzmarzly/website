@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["components","Components for the rendering processor."],["resources","`amethyst` rendering ecs resources"],["systems","Rendering system."]]});

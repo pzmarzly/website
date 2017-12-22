@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RenderSystem` struct in crate `amethyst`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RenderSystem">
+
+    <title>amethyst::ecs::rendering::systems::RenderSystem - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../../../amethyst/index.html'><img src='https://tinyurl.com/jtmm43a' alt='logo' width='100'></a>
+        <p class='location'>Struct RenderSystem</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../../index.html'>amethyst</a>::<wbr><a href='../../index.html'>ecs</a>::<wbr><a href='../index.html'>rendering</a>::<wbr><a href='index.html'>systems</a></p><script>window.sidebarCurrent = {name: 'RenderSystem', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>amethyst</a>::<wbr><a href='../../index.html'>ecs</a>::<wbr><a href='../index.html'>rendering</a>::<wbr><a href='index.html'>systems</a>::<wbr><a class="struct" href=''>RenderSystem</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#19-24' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RenderSystem { /* fields omitted */ }</pre><div class='docblock'><p>Rendering system.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../../amethyst/ecs/rendering/systems/struct.RenderSystem.html" title="struct amethyst::ecs::rendering::systems::RenderSystem">RenderSystem</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#17' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#17' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 id='impl-System&lt;&#39;a&gt;' class='impl'><span class='in-band'><code>impl&lt;'a&gt; System&lt;'a&gt; for <a class="struct" href="../../../../amethyst/ecs/rendering/systems/struct.RenderSystem.html" title="struct amethyst::ecs::rendering::systems::RenderSystem">RenderSystem</a></code><a href='#impl-System&lt;&#39;a&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#26-69' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.SystemData' class="type"><span id='SystemData.t' class='invisible'><code>type <a href='#associatedtype.SystemData' class="type">SystemData</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>Fetch&lt;'a, <a class="struct" href="../../../../amethyst_renderer/cam/struct.Camera.html" title="struct amethyst_renderer::cam::Camera">Camera</a>&gt;, Fetch&lt;'a, <a class="struct" href="../../../../amethyst/ecs/rendering/resources/struct.Factory.html" title="struct amethyst::ecs::rendering::resources::Factory">Factory</a>&gt;, Fetch&lt;'a, <a class="struct" href="../../../../amethyst/ecs/rendering/resources/struct.AmbientColor.html" title="struct amethyst::ecs::rendering::resources::AmbientColor">AmbientColor</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../../../../amethyst/ecs/transform/components/struct.Transform.html" title="struct amethyst::ecs::transform::components::Transform">Transform</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.LightComponent.html" title="struct amethyst::ecs::rendering::components::LightComponent">LightComponent</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MaterialComponent.html" title="struct amethyst::ecs::rendering::components::MaterialComponent">MaterialComponent</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshComponent.html" title="struct amethyst::ecs::rendering::components::MeshComponent">MeshComponent</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<div class='docblock'><p>The resource bundle required to execute this system. <a href="#associatedtype.SystemData">Read more</a></p>
+</div><h4 id='method.run' class="method"><span id='run.v' class='invisible'><code>fn <a href='#method.run' class='fnname'>run</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;(camera, factory, ambient_color, globals, lights, materials, meshes): Self::SystemData<br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#35-68' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Executes the system with the required system data. <a href="#tymethod.run">Read more</a></p>
+</div><h4 id='method.running_time' class="method"><span id='running_time.v' class='invisible'><code>fn <a href='#method.running_time' class='fnname'>running_time</a>(&amp;self) -&gt; RunningTime</code></span></h4>
+<div class='docblock'><p>Returns a hint how long the system needs for running. This is used to optimize the way they&#39;re executed (might allow more parallelization). <a href="#method.running_time">Read more</a></p>
+</div></div><h3 id='impl-SystemExt&lt;&#39;a, (&amp;&#39;b EventsLoop, PipelineBuilder, Option&lt;DisplayConfig&gt;)&gt;' class='impl'><span class='in-band'><code>impl&lt;'a, 'b&gt; <a class="trait" href="../../../../amethyst/ecs/trait.SystemExt.html" title="trait amethyst::ecs::SystemExt">SystemExt</a>&lt;'a, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>&amp;'b EventsLoop, <a class="struct" href="../../../../amethyst_renderer/pipe/struct.PipelineBuilder.html" title="struct amethyst_renderer::pipe::PipelineBuilder">PipelineBuilder</a>, <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../../amethyst_renderer/config/struct.Config.html" title="struct amethyst_renderer::config::Config">DisplayConfig</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt; for <a class="struct" href="../../../../amethyst/ecs/rendering/systems/struct.RenderSystem.html" title="struct amethyst::ecs::rendering::systems::RenderSystem">RenderSystem</a></code><a href='#impl-SystemExt&lt;&#39;a, (&amp;&#39;b EventsLoop, PipelineBuilder, Option&lt;DisplayConfig&gt;)&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#71-115' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>fn <a href='../../../../amethyst/ecs/trait.SystemExt.html#tymethod.build' class='fnname'>build</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;(events, pipe, config): <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>&amp;'b EventsLoop, <a class="struct" href="../../../../amethyst_renderer/pipe/struct.PipelineBuilder.html" title="struct amethyst_renderer::pipe::PipelineBuilder">PipelineBuilder</a>, <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../../amethyst_renderer/config/struct.Config.html" title="struct amethyst_renderer::config::Config">DisplayConfig</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;world: &amp;mut World<br>) -&gt; <a class="type" href="../../../../amethyst/type.Result.html" title="type amethyst::Result">Result</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/systems.rs.html#75-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create new <code>RenderSystem</code>
+It creates window and do render into it</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "amethyst";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

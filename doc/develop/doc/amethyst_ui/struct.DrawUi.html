@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DrawUi` struct in crate `amethyst_ui`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DrawUi">
+
+    <title>amethyst_ui::DrawUi - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../amethyst_ui/index.html'><img src='https://tinyurl.com/jtmm43a' alt='logo' width='100'></a>
+        <p class='location'>Struct DrawUi</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>amethyst_ui</a></p><script>window.sidebarCurrent = {name: 'DrawUi', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>amethyst_ui</a>::<wbr><a class="struct" href=''>DrawUi</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/amethyst_ui/pass.rs.html#63-69' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct DrawUi { /* fields omitted */ }</pre><div class='docblock'><p>Draw Ui elements.  UI won&#39;t display without this.  It&#39;s recommended this be your last pass.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../amethyst_ui/struct.DrawUi.html" title="struct amethyst_ui::DrawUi">DrawUi</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#80-122' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(loader: &amp;<a class="struct" href="../amethyst_assets/loader/struct.Loader.html" title="struct amethyst_assets::loader::Loader">Loader</a>, mesh_storage: &amp;<a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_renderer/mesh/struct.Mesh.html" title="struct amethyst_renderer::mesh::Mesh">Mesh</a>&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#82-121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create instance of <code>DrawUi</code> pass</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-PassData&lt;&#39;a&gt;' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../amethyst_renderer/pipe/pass/trait.PassData.html" title="trait amethyst_renderer::pipe::pass::PassData">PassData</a>&lt;'a&gt; for <a class="struct" href="../amethyst_ui/struct.DrawUi.html" title="struct amethyst_ui::DrawUi">DrawUi</a></code><a href='#impl-PassData&lt;&#39;a&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#124-138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Data' class="type"><span id='Data.t' class='invisible'><code>type <a href='../amethyst_renderer/pipe/pass/trait.PassData.html#associatedtype.Data' class="type">Data</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>Entities&lt;'a&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/loader/struct.Loader.html" title="struct amethyst_assets::loader::Loader">Loader</a>&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_renderer/resources/struct.ScreenDimensions.html" title="struct amethyst_renderer::resources::ScreenDimensions">ScreenDimensions</a>&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_renderer/mesh/struct.Mesh.html" title="struct amethyst_renderer::mesh::Mesh">Mesh</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_renderer/tex/struct.Texture.html" title="struct amethyst_renderer::tex::Texture">Texture</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_ui/struct.FontAsset.html" title="struct amethyst_ui::FontAsset">FontAsset</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiFocused.html" title="struct amethyst_ui::UiFocused">UiFocused</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiImage.html" title="struct amethyst_ui::UiImage">UiImage</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiTransform.html" title="struct amethyst_ui::UiTransform">UiTransform</a>&gt;, WriteStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiText.html" title="struct amethyst_ui::UiText">UiText</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.TextEditing.html" title="struct amethyst_ui::TextEditing">TextEditing</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<div class='docblock'><p>The data itself.</p>
+</div></div><h3 id='impl-Pass' class='impl'><span class='in-band'><code>impl <a class="trait" href="../amethyst_renderer/pipe/pass/trait.Pass.html" title="trait amethyst_renderer::pipe::pass::Pass">Pass</a> for <a class="struct" href="../amethyst_ui/struct.DrawUi.html" title="struct amethyst_ui::DrawUi">DrawUi</a></code><a href='#impl-Pass' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#140-542' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.compile' class="method"><span id='compile.v' class='invisible'><code>fn <a href='../amethyst_renderer/pipe/pass/trait.Pass.html#tymethod.compile' class='fnname'>compile</a>(&amp;self, effect: <a class="struct" href="../amethyst_renderer/pipe/effect/struct.NewEffect.html" title="struct amethyst_renderer::pipe::effect::NewEffect">NewEffect</a>) -&gt; <a class="type" href="../amethyst_renderer/error/type.Result.html" title="type amethyst_renderer::error::Result">Result</a>&lt;<a class="struct" href="../amethyst_renderer/pipe/effect/struct.Effect.html" title="struct amethyst_renderer::pipe::effect::Effect">Effect</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#141-150' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>The pass is given an opportunity to compile shaders and store them in an <code>Effect</code> which is then passed to the pass in <code>apply</code>. <a href="../amethyst_renderer/pipe/pass/trait.Pass.html#tymethod.compile">Read more</a></p>
+</div><h4 id='method.apply' class="method"><span id='apply.v' class='invisible'><code>fn <a href='../amethyst_renderer/pipe/pass/trait.Pass.html#tymethod.apply' class='fnname'>apply</a>&lt;'a, 'b: 'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;encoder: &amp;mut <a class="type" href="../amethyst_renderer/types/type.Encoder.html" title="type amethyst_renderer::types::Encoder">Encoder</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;effect: &amp;mut <a class="struct" href="../amethyst_renderer/pipe/effect/struct.Effect.html" title="struct amethyst_renderer::pipe::effect::Effect">Effect</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;factory: <a class="type" href="../amethyst_renderer/types/opengl/type.Factory.html" title="type amethyst_renderer::types::opengl::Factory">Factory</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;(entities, loader, screen_dimensions, mesh_storage, tex_storage, font_storage, focused, ui_image, ui_transform, ui_text, editing): <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>Entities&lt;'a&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/loader/struct.Loader.html" title="struct amethyst_assets::loader::Loader">Loader</a>&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_renderer/resources/struct.ScreenDimensions.html" title="struct amethyst_renderer::resources::ScreenDimensions">ScreenDimensions</a>&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_renderer/mesh/struct.Mesh.html" title="struct amethyst_renderer::mesh::Mesh">Mesh</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_renderer/tex/struct.Texture.html" title="struct amethyst_renderer::tex::Texture">Texture</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_assets/storage/struct.AssetStorage.html" title="struct amethyst_assets::storage::AssetStorage">AssetStorage</a>&lt;<a class="struct" href="../amethyst_ui/struct.FontAsset.html" title="struct amethyst_ui::FontAsset">FontAsset</a>&gt;&gt;, Fetch&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiFocused.html" title="struct amethyst_ui::UiFocused">UiFocused</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiImage.html" title="struct amethyst_ui::UiImage">UiImage</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiTransform.html" title="struct amethyst_ui::UiTransform">UiTransform</a>&gt;, WriteStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.UiText.html" title="struct amethyst_ui::UiText">UiText</a>&gt;, ReadStorage&lt;'a, <a class="struct" href="../amethyst_ui/struct.TextEditing.html" title="struct amethyst_ui::TextEditing">TextEditing</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_ui/pass.rs.html#152-541' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Called whenever the renderer is ready to apply the pass.  Feed commands into the encoder here. <a href="../amethyst_renderer/pipe/pass/trait.Pass.html#tymethod.apply">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_ui";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

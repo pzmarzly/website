@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `With` trait in crate `amethyst_renderer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, With">
+
+    <title>amethyst_renderer::With - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../amethyst_renderer/index.html'><img src='https://tinyurl.com/jtmm43a' alt='logo' width='100'></a>
+        <p class='location'>Trait With</p><div class="block items"><ul><li><a href="#associated-const">Associated Constants</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='index.html'>amethyst_renderer</a></p><script>window.sidebarCurrent = {name: 'With', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>amethyst_renderer</a>::<wbr><a class="trait" href=''>With</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#104-107' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait With&lt;F:&nbsp;<a class="trait" href="../amethyst_renderer/trait.Attribute.html" title="trait amethyst_renderer::Attribute">Attribute</a>&gt;: <a class="trait" href="../amethyst_renderer/trait.VertexFormat.html" title="trait amethyst_renderer::VertexFormat">VertexFormat</a> {
+    const <a href='#associatedconstant.FORMAT' class="constant"><b>FORMAT</b></a>: <a class="type" href="../amethyst_renderer/type.AttributeFormat.html" title="type amethyst_renderer::AttributeFormat">AttributeFormat</a>;
+}</pre><div class='docblock'><p>Trait implemented by all valid vertex formats for each field</p>
+</div>
+            <h2 id='associated-const' class='small-section-header'>
+              Associated Constants<a href='#associated-const' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='associatedconstant.FORMAT' class='method'><span id='FORMAT.v' class='invisible'><code>const <a href='#associatedconstant.FORMAT' class="constant"><b>FORMAT</b></a>: <a class="type" href="../amethyst_renderer/type.AttributeFormat.html" title="type amethyst_renderer::AttributeFormat">AttributeFormat</a></code></span></h3><div class='docblock'><p>Individual format of the attribute for this vertex format</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#144-152' title='goto source code'>[src]</a></div><code>impl&lt;T&gt; With&lt;T&gt; for <a class="struct" href="../amethyst_renderer/struct.Separate.html" title="struct amethyst_renderer::Separate">Separate</a>&lt;T&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait" href="../amethyst_renderer/trait.Attribute.html" title="trait amethyst_renderer::Attribute">Attribute</a>,&nbsp;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#173-178' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Position.html" title="enum amethyst_renderer::Position">Position</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosColor.html" title="struct amethyst_renderer::PosColor">PosColor</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#180-185' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Color.html" title="enum amethyst_renderer::Color">Color</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosColor.html" title="struct amethyst_renderer::PosColor">PosColor</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#206-211' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Position.html" title="enum amethyst_renderer::Position">Position</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosTex.html" title="struct amethyst_renderer::PosTex">PosTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#213-218' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.TexCoord.html" title="enum amethyst_renderer::TexCoord">TexCoord</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosTex.html" title="struct amethyst_renderer::PosTex">PosTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#242-247' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Position.html" title="enum amethyst_renderer::Position">Position</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTex.html" title="struct amethyst_renderer::PosNormTex">PosNormTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#249-254' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Normal.html" title="enum amethyst_renderer::Normal">Normal</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTex.html" title="struct amethyst_renderer::PosNormTex">PosNormTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#256-261' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.TexCoord.html" title="enum amethyst_renderer::TexCoord">TexCoord</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTex.html" title="struct amethyst_renderer::PosNormTex">PosNormTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#288-293' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Position.html" title="enum amethyst_renderer::Position">Position</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTangTex.html" title="struct amethyst_renderer::PosNormTangTex">PosNormTangTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#295-300' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Normal.html" title="enum amethyst_renderer::Normal">Normal</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTangTex.html" title="struct amethyst_renderer::PosNormTangTex">PosNormTangTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#302-307' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.Tangent.html" title="enum amethyst_renderer::Tangent">Tangent</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTangTex.html" title="struct amethyst_renderer::PosNormTangTex">PosNormTangTex</a></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../src/amethyst_renderer/vertex.rs.html#309-314' title='goto source code'>[src]</a></div><code>impl With&lt;<a class="enum" href="../amethyst_renderer/enum.TexCoord.html" title="enum amethyst_renderer::TexCoord">TexCoord</a>&gt; for <a class="struct" href="../amethyst_renderer/struct.PosNormTangTex.html" title="struct amethyst_renderer::PosNormTangTex">PosNormTangTex</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/amethyst_renderer/trait.With.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_renderer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

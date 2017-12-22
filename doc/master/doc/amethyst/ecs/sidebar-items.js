@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["audio","`amethyst` audio ecs module"],["input","`amethyst` input rebinding module"],["rendering","`amethyst` rendering ecs module"],["transform","`amethyst` transform ecs module"]],"trait":[["SystemExt","Extension trait for all systems."]]});

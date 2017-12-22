@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://amethyst.rs/feed.xml" rel="self" type="application/atom+xml" /><link href="https://amethyst.rs/" rel="alternate" type="text/html" /><updated>2017-12-22T19:03:45+00:00</updated><id>https://amethyst.rs/</id><title type="html">Amethyst | Data-oriented, data-driven game engine</title><subtitle>A data-oriented, data-driven game engine written in Rust.</subtitle><entry><title type="html">This Fortnight in Amethyst 11</title><link href="https://amethyst.rs/2017/10/18/twia-11.html" rel="alternate" type="text/html" title="This Fortnight in Amethyst 11" /><published>2017-10-18T15:17:00+00:00</published><updated>2017-10-18T15:17:00+00:00</updated><id>https://amethyst.rs/2017/10/18/twia-11</id><content type="html" xml:base="https://amethyst.rs/2017/10/18/twia-11.html">&lt;blockquote&gt;
+  &lt;p&gt;News from &lt;code class=&quot;highlighter-rouge&quot;&gt;Sep 16, 2017&lt;/code&gt; – &lt;code class=&quot;highlighter-rouge&quot;&gt;Oct 18, 2017&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the &lt;code class=&quot;highlighter-rouge&quot;&gt;11th&lt;/code&gt; issue of &lt;em&gt;This Fortnight in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every fortnight. If you have any suggestions or ideas, feel free to voice them
+&lt;a href=&quot;https://github.com/amethyst/website&quot;&gt;on GitHub&lt;/a&gt; or &lt;a href=&quot;https://gitter.im/orgs/amethyst/rooms&quot;&gt;the Gitter chat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;25&lt;/code&gt; pull requests, &lt;a href=&quot;https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2017-09-16..2017-10-18&quot;&gt;in the engine&lt;/a&gt; landed this fortnight.&lt;/p&gt;
+
+&lt;h2 id=&quot;announcements&quot;&gt;Announcements&lt;/h2&gt;
+
+&lt;p&gt;Amethyst is considering participating in Google’s Summer of Code, but we need
+more mentors!  If you’d like to volunteer please let us know on &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/412&quot;&gt;#412&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, as you can see the blog has moved to a bi-weekly format.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-develop&quot;&gt;What’s cooking on develop?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Assets have been reworked on develop!  We’ve made the system less
+abstract and more flexible.  Thanks &lt;a href=&quot;https://github.com/torkleyy&quot;&gt;@torkleyy&lt;/a&gt; for your tireless efforts
+on this front! &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/416&quot;&gt;#416&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Major project restructure.  We’re currently working on a large scale overhaul
+to the project structure, new crates will be appearing and functionality will
+be moved from the core crate to these new crates.  After this is complete we’re
+hoping your import lists will look much cleaner and structures and functions
+will be easier to find.  Thanks &lt;a href=&quot;https://github.com/Rhuagh&quot;&gt;@Rhuagh&lt;/a&gt; for your many pull requests to
+help accomplish this! (Too many pull requests to list for this bullet)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Renderer resizing has landed!  Your render targets will now resize with the
+window. This was authored by yours truly, &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/402&quot;&gt;#402&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;But will it blend?  Amethyst now has support for BlendTargets in passes,
+enabling you to provide and use blending algorithms for your rendering, this makes
+things like transparent and translucent passes possible. Authored by
+&lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/411&quot;&gt;#411&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Your game will now by default automatically close when a &lt;code class=&quot;highlighter-rouge&quot;&gt;Window::Closed&lt;/code&gt; event
+is received, you no longer need to explicitly quit in every state when this
+event arrives. Authored by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/420&quot;&gt;#420&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;WindowMessages have arrived on develop!  A new resource added to the specs
+world permits you to provide closures to operate on the &lt;code class=&quot;highlighter-rouge&quot;&gt;winit::Window&lt;/code&gt; allowing
+you to programmatically hide the cursor, and resize the window among other things.
+Authored by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/387&quot;&gt;#387&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h3&gt;
+
+&lt;p&gt;The entire project has been restructured, and assets have been rewritten.
+You’ll likely need to update your import lists when upgrading, and restructure
+how you’re handling assets.  We apologize for this maintenance burden, but we
+feel it’s worthwhile as the new asset system will permit much more robust
+asset loading in the future, such as our upcoming GLTF loader.&lt;/p&gt;
+
+&lt;p&gt;In addition to this a large volume of generic parameters have been removed across
+the project and replaced with suitable types internally.&lt;/p&gt;
+
+&lt;h2 id=&quot;calls-for-participation&quot;&gt;Calls for participation&lt;/h2&gt;
+
+&lt;p&gt;While we don’t have any specific calls for participation this post please never
+hesitate to send us a PR if you’ve got something you want to contribute!  We’re
+always happy to have more contributors!&lt;/p&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/unbu&quot;&gt;@Unbu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/429&quot;&gt;#429&lt;/a&gt;: Passes have too much boilerplate&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/428&quot;&gt;#428&lt;/a&gt;: Rendering optimization notes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/414&quot;&gt;#414&lt;/a&gt;: Add controller support&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/412&quot;&gt;#412&lt;/a&gt;: Google Summer of Code?&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/396&quot;&gt;#396&lt;/a&gt;: Make crates more self-contained and introduce &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_core&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Issue 412 was already linked above --&gt;</content><author><name></name></author><summary type="html">News from Sep 16, 2017 – Oct 18, 2017</summary></entry><entry><title type="html">This Year in Amethyst 10</title><link href="https://amethyst.rs/2017/09/16/twia-10.html" rel="alternate" type="text/html" title="This Year in Amethyst 10" /><published>2017-09-16T11:00:00+00:00</published><updated>2017-09-16T11:00:00+00:00</updated><id>https://amethyst.rs/2017/09/16/twia-10</id><content type="html" xml:base="https://amethyst.rs/2017/09/16/twia-10.html">&lt;blockquote&gt;
+  &lt;p&gt;News from &lt;code class=&quot;highlighter-rouge&quot;&gt;Sep 11, 2016&lt;/code&gt; – &lt;code class=&quot;highlighter-rouge&quot;&gt;Sep 16, 2017&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the &lt;code class=&quot;highlighter-rouge&quot;&gt;10th&lt;/code&gt; issue of &lt;em&gt;This &lt;del&gt;Week&lt;/del&gt; Year in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every &lt;del&gt;week&lt;/del&gt; year. If you have any suggestions or ideas, feel free to voice them
+&lt;a href=&quot;https://github.com/amethyst/website&quot;&gt;on GitHub&lt;/a&gt; or &lt;a href=&quot;https://gitter.im/orgs/amethyst/rooms&quot;&gt;the Gitter chat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;145&lt;/code&gt; pull requests &lt;a href=&quot;https://github.com/amethyst/amethyst/pulls?q=is:merged+closed:2016-09-11..2017-10-03&quot;&gt;in the engine&lt;/a&gt; landed this &lt;del&gt;week&lt;/del&gt; year.&lt;/p&gt;
+
+&lt;h2 id=&quot;announcements&quot;&gt;Announcements&lt;/h2&gt;
+
+&lt;p&gt;Version 0.5.1 was released! A lot of work was done during this year.
+Asset management was rewritten by &lt;a href=&quot;https://github.com/torkleyy&quot;&gt;@torkleyy&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/244&quot;&gt;#244&lt;/a&gt;
+now assets can be loaded asynchronously using futures.
+Audio support was added by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/265&quot;&gt;#265&lt;/a&gt;
+Renderer was rewritten by &lt;a href=&quot;https://github.com/ebkalderon&quot;&gt;@eyalkalderon&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/285&quot;&gt;#285&lt;/a&gt;
+now we have better design and parallel data rendering.
+Input system was overhauled by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/247&quot;&gt;#247&lt;/a&gt;,
+&lt;a href=&quot;https://github.com/amethyst/amethyst/pull/261&quot;&gt;@261&lt;/a&gt;, and &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/274&quot;&gt;#274&lt;/a&gt; now we have input rebinding.
+Thanks to &lt;a href=&quot;https://github.com/torkleyy&quot;&gt;@torkleyy&lt;/a&gt;’s work in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/269&quot;&gt;#269&lt;/a&gt; we now use RON instead of YAML for configs.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-develop&quot;&gt;What’s cooking on develop?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Input system has been even further refactored to be event driven and generic by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/385&quot;&gt;#385&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Specs aware renderer pipeline added by &lt;a href=&quot;https://github.com/omni-viral&quot;&gt;@omni-viral&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/317&quot;&gt;#317&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;ECS bundles added by &lt;a href=&quot;https://github.com/Rhuagh&quot;&gt;@Rhuagh&lt;/a&gt; in &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/364&quot;&gt;#364&lt;/a&gt; (These bundle up related components and resources,
+making it easier to get started with amethyst.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Asset management was rewritten by &lt;a href=&quot;https://github.com/torkleyy&quot;&gt;@torkley&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;RON instead of YAML is used as config format thanks to &lt;a href=&quot;https://github.com/torkleyy&quot;&gt;@torkleyy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Input system was overhauled by &lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;@Xaeroxe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Renderer was completely rewritten by &lt;a href=&quot;https://github.com/ebkalderon&quot;&gt;@eyalkalderon&lt;/a&gt; with help from &lt;a href=&quot;https://github.com/omni-viral&quot;&gt;@omni-viral&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;calls-for-participation&quot;&gt;Calls for participation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We could really use some help with getting our &lt;a href=&quot;https://github.com/amethyst/tools&quot;&gt;tools repository&lt;/a&gt; and &lt;a href=&quot;https://github.com/amethyst/amethyst/tree/develop/book&quot;&gt;the book&lt;/a&gt;
+up to date, any help here would be greatly appreciated!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-amethyst-organization-members&quot;&gt;New amethyst organization members&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/omni-viral&quot;&gt;omni-viral&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/torkleyy&quot;&gt;torkleyy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;Xaeroxe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Xaeroxe&quot;&gt;Xaeroxe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/torkleyy&quot;&gt;torkleyy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/omni-viral&quot;&gt;omni-viral&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Rhuagh&quot;&gt;Rhuagh&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/vitvakatu&quot;&gt;vitvakatu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mechaxl&quot;&gt;mechaxl&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Lionex&quot;&gt;Lionex&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/derekdreery&quot;&gt;derekdreery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Binero&quot;&gt;Binero&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Object905&quot;&gt;Object905&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ivandardi&quot;&gt;ivandardi&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/anderejd&quot;&gt;anderejd&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ahmedcharles&quot;&gt;ahmedcharles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/stenverbois&quot;&gt;stenverbois&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/aochagavia&quot;&gt;aochagavia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/minecrawler&quot;&gt;minecrawler&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Cldfire&quot;&gt;Cldfire&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ForsakenHarmony&quot;&gt;ForsakenHarmony&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/scorbeil&quot;&gt;scorbeil&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Hammster&quot;&gt;Hammster&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jFransham&quot;&gt;jFransham&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/vvuk&quot;&gt;vvuk&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sekhat&quot;&gt;sekhat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/palodequeso&quot;&gt;palodequeso&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cooperra&quot;&gt;cooperra&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;p&gt;It’s been so long since one of these posts has been written that most of our issues qualify as “new” so this section is being omitted from this post.&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Sep 11, 2016 – Sep 16, 2017</summary></entry><entry><title type="html">These Months in Amethyst 9</title><link href="https://amethyst.rs/2016/09/11/twia-9.html" rel="alternate" type="text/html" title="These Months in Amethyst 9" /><published>2016-09-11T16:00:00+00:00</published><updated>2016-09-11T16:00:00+00:00</updated><id>https://amethyst.rs/2016/09/11/twia-9</id><content type="html" xml:base="https://amethyst.rs/2016/09/11/twia-9.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Mar 27, 2016 – Sep 11, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the ninth issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt; (or more
+accurately, &lt;em&gt;These Months in Amethyst&lt;/em&gt;), a blog bringing you the latest changes
+and updates regarding the Amethyst game engine every week (or a few months). If
+you have any suggestions or ideas, feel free to voice them &lt;a href=&quot;https://github.com/amethyst/website&quot;&gt;on GitHub&lt;/a&gt; or
+&lt;a href=&quot;https://gitter.im/orgs/amethyst/rooms&quot;&gt;the Gitter chat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Fifty-two pull requests, &lt;a href=&quot;https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-27..2016-09-11&quot;&gt;forty-six in the engine&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-27..2016-09-11&quot;&gt;six in the tools&lt;/a&gt;, landed these past few months.&lt;/p&gt;
+
+&lt;h2 id=&quot;announcements&quot;&gt;Announcements&lt;/h2&gt;
+
+&lt;p&gt;From this edition onward &lt;em&gt;This Week in Amethyst&lt;/em&gt; will be changed to &lt;em&gt;This Month
+in Amethyst&lt;/em&gt;. Lately, progress has been coming in sporadic bursts with long
+periods of silence, so we thought a monthly format might suit us better.&lt;/p&gt;
+
+&lt;p&gt;With that out of the way, what have we been up to in the past few months? Well,
+a lot, actually! We’ve seen versions 0.3.0 and 0.3.1 come and go. Rendering,
+event handling, and the entity-component-system (ECS) libraries have stabilized
+to the point where we can finally ship some real working examples starting with
+the upcoming 0.4.0, including a simple version of &lt;a href=&quot;https://github.com/amethyst/amethyst/tree/develop/examples/04_pong&quot;&gt;pong&lt;/a&gt;! This means that
+the long-awaited &lt;a href=&quot;https://www.amethyst.rs/book/simple_application.html&quot;&gt;“pong clone” chapter&lt;/a&gt; will be added soon to the book!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/lschmierer&quot;&gt;Lukas Schmierer&lt;/a&gt; has created a set of performance benchmarks for popular
+ECS libraries in Rust. See the &lt;a href=&quot;https://github.com/ebkalderon&quot;&gt;ecs_bench&lt;/a&gt; repo for more details.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-develop&quot;&gt;What’s cooking on develop?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Both &lt;a href=&quot;https://github.com/slide-rs/specs&quot;&gt;Specs&lt;/a&gt; and &lt;a href=&quot;https://github.com/gfx-rs/gfx&quot;&gt;GFX&lt;/a&gt; have been fully integrated into Amethyst,
+starting with version 0.4.0.&lt;/li&gt;
+  &lt;li&gt;We have first light! A flexible &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/49&quot;&gt;GFX-based renderer&lt;/a&gt; has been
+implemented. Great job, &lt;a href=&quot;https://github.com/csherratt&quot;&gt;@csherratt&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;Basic &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/61&quot;&gt;YAML configuration&lt;/a&gt; loading has been written, courtesy of
+&lt;a href=&quot;https://github.com/Aceeri&quot;&gt;@Aceeri&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://github.com/amethyst/amethyst/pull/63&quot;&gt;amethyst_context&lt;/a&gt; crate has been introduced, which holds a
+collection of common resources that can be passed around different parts of
+the engine. Credit goes to &lt;a href=&quot;https://github.com/nchashch&quot;&gt;@nchashch&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/pull/67&quot;&gt;Event handling&lt;/a&gt; for keyboard input and window events is now supported
+via &lt;a href=&quot;https://github.com/tomaka/glutin&quot;&gt;Glutin&lt;/a&gt;, with support for more windowing systems to come. Thanks
+again to &lt;a href=&quot;https://github.com/nchashch&quot;&gt;@nchashch&lt;/a&gt; for the addition!&lt;/li&gt;
+  &lt;li&gt;We now have a default &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/89&quot;&gt;renderer processor&lt;/a&gt; included with the ECS, which
+enables us to write the new &lt;a href=&quot;https://github.com/amethyst/amethyst/tree/develop/examples/04_pong&quot;&gt;pong example&lt;/a&gt;. Thanks again to the powerhouse
+&lt;a href=&quot;https://github.com/nchashch&quot;&gt;@nchashch&lt;/a&gt; for the brilliant work!&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/tools/pull/23&quot;&gt;The build tool gained the &lt;code class=&quot;highlighter-rouge&quot;&gt;deploy&lt;/code&gt; subcommand&lt;/a&gt;. This builds your project
+in release mode, runs all your unit and integration tests, compresses your
+game assets, and outputs everything to a directory called &lt;code class=&quot;highlighter-rouge&quot;&gt;deploy&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The build tool is also capable of &lt;a href=&quot;https://github.com/amethyst/tools/pull/25&quot;&gt;checking for malformed game projects&lt;/a&gt;
+and also &lt;a href=&quot;https://github.com/amethyst/tools/pull/28&quot;&gt;tweaking Cargo features&lt;/a&gt; in preparation for the proposed
+“shards” extension system (issue &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/34&quot;&gt;#34&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_engine&lt;/code&gt; crate has been deprecated and moved to the &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst&lt;/code&gt;
+crate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;calls-for-participation&quot;&gt;Calls for participation&lt;/h2&gt;
+
+&lt;p&gt;All of these issues have mentors available. Just comment on the issue to let us
+know that you are working on it!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[Easy] &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/50&quot;&gt;Add more content to the book&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[Moderate] &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/53&quot;&gt;Transform Processor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[Moderate] &lt;a href=&quot;https://github.com/amethyst/amethyst/issues/60&quot;&gt;Audio Processor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/43&quot;&gt;Feature: Hot-Reloading (issue #43)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/79&quot;&gt;Need a simple 3D rendering example (issue #79)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/88&quot;&gt;Remove usage of String in the asset manager (issue #88)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/89&quot;&gt;Split out backend code into separate modules (issue #89)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/104&quot;&gt;Input Handling - State tracking (issue #104)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tools
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/tools/issues/30&quot;&gt;Print errors to stderr (issue #30)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/tools/issues/34&quot;&gt;Move useful code out of CLI tool and into shared library (issue #34)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/bjadamson&quot;&gt;bjadamson&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Emilgardis&quot;&gt;Emilgardis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/nchashch&quot;&gt;nchashch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/palodequeso&quot;&gt;palodequeso&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/serprex&quot;&gt;serprex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This edition was written and edited by &lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;@LucioFranco&lt;/a&gt; and &lt;a href=&quot;https://github.com/ebkalderon&quot;&gt;@ebkalderon&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Mar 27, 2016 – Sep 11, 2016</summary></entry><entry><title type="html">These Weeks in Amethyst 8</title><link href="https://amethyst.rs/2016/03/28/twia-8.html" rel="alternate" type="text/html" title="These Weeks in Amethyst 8" /><published>2016-03-28T06:59:30+00:00</published><updated>2016-03-28T06:59:30+00:00</updated><id>https://amethyst.rs/2016/03/28/twia-8</id><content type="html" xml:base="https://amethyst.rs/2016/03/28/twia-8.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Mar 13, 2016 – Mar 27, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the eighth issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week (or two). If you have any suggestions or ideas, feel free to voice
+them &lt;a href=&quot;https://github.com/amethyst/website&quot;&gt;on GitHub&lt;/a&gt; or &lt;a href=&quot;https://gitter.im/orgs/amethyst/rooms&quot;&gt;the Gitter chat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Eight pull requests, &lt;a href=&quot;https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-13..2016-03-27&quot;&gt;four in the engine&lt;/a&gt; and &lt;a href=&quot;https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-13..2016-03-27&quot;&gt;four in the tools&lt;/a&gt;,
+landed over these weeks.&lt;/p&gt;
+
+&lt;h2 id=&quot;announcements&quot;&gt;Announcements&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/27&quot;&gt;Amethyst is now an organization on GitHub!&lt;/a&gt; All the Amethyst
+repositories have been transferred to this new organization, and
+&lt;a href=&quot;https://github.com/amethyst/amethyst/wiki&quot;&gt;the wiki&lt;/a&gt; is now completely open for collaborators to edit.
+&lt;a href=&quot;https://gitter.im/orgs/amethyst/rooms&quot;&gt;The Gitter chat&lt;/a&gt; has also been split into multiple rooms to help keep
+conversations organized and reduce overall noise.&lt;/p&gt;
+
+&lt;p&gt;With these changes, some links may be broken. We will be fixing old links,
+especially on old &lt;em&gt;TWIA&lt;/em&gt; articles, to ensure continuity. If you come across
+other broken links online, please let us know on the &lt;a href=&quot;https://gitter.im/amethyst/website&quot;&gt;amethyst/website&lt;/a&gt;
+room on Gitter and we’ll go fix it!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.amethyst.rs/&quot;&gt;The old WordPress blog&lt;/a&gt; is being discontinued in favor of this website.
+We will keep it up for the forseeable future to keep old links intact, but it
+will no longer be updated. Please update your bookmarks and &lt;a href=&quot;https://www.amethyst.rs/rss.xml&quot;&gt;RSS feeds&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;The entity-component-system is still undergoing churn under
+&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/10&quot;&gt;engine issue #10&lt;/a&gt; and on the &lt;a href=&quot;https://gitter.im/amethyst/engine&quot;&gt;“engine” chat room&lt;/a&gt;. To keep our
+thoughts straight, @&lt;a href=&quot;https://github.com/kvark&quot;&gt;kvark&lt;/a&gt; put together &lt;a href=&quot;https://gist.github.com/kvark/168b132818aa6f6ef4db&quot;&gt;an excellent Gist&lt;/a&gt;
+summarizing our ideas so far. Check it out!&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Integration tests for &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_tools&lt;/code&gt; can now be run with &lt;code class=&quot;highlighter-rouge&quot;&gt;cargo test&lt;/code&gt;
+(pull request &lt;a href=&quot;https://github.com/amethyst/tools/pull/21&quot;&gt;#21&lt;/a&gt; by @&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;LucioFranco&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst&lt;/code&gt; build tool’s subcommands API got a refactor (pull request
+&lt;a href=&quot;https://github.com/amethyst/tools/pull/24&quot;&gt;#24&lt;/a&gt; by @&lt;a href=&quot;https://github.com/White-Oak&quot;&gt;White-Oak&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;As you can see, we have an official website! It is hosted on
+&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; and made with &lt;a href=&quot;https://github.com/cobalt-org/cobalt.rs&quot;&gt;Cobalt.rs&lt;/a&gt;, a static website generator
+similar to Jekyll written in Rust. Future &lt;em&gt;This Week in Amethyst&lt;/em&gt; posts will
+be written collaboratively with public pull requests, much like &lt;em&gt;This Week in
+Rust&lt;/em&gt; already does. Thanks to @&lt;a href=&quot;https://github.com/Aceeri&quot;&gt;Aceeri&lt;/a&gt; and @&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;LucioFranco&lt;/a&gt; for the
+excellent effort! Check out the &lt;a href=&quot;https://github.com/amethyst/website&quot;&gt;website repo&lt;/a&gt; for details.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Aceeri&quot;&gt;Aceeri&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ogoding&quot;&gt;ogoding&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/28&quot;&gt;Relicense under dual-license Apache2 and MIT (issue #28)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/29&quot;&gt;RFC: Config.yml specification&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/33&quot;&gt;Add RFC tag type to CONTRIBUTING.md (issue #33)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/34&quot;&gt;RFC: Extensions system “Shards” (issue #34)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/amethyst/issues/36&quot;&gt;Keeping change log up to date (issue #36)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tools
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/tools/issues/22&quot;&gt;Implement deploy subcommand (issue #22)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/amethyst/tools/issues/26&quot;&gt;Determine if project is amethyst or not (issue #26)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">News from Mar 13, 2016 – Mar 27, 2016</summary></entry><entry><title type="html">These Weeks in Amethyst 7</title><link href="https://amethyst.rs/2016/03/13/twia-7.html" rel="alternate" type="text/html" title="These Weeks in Amethyst 7" /><published>2016-03-13T21:23:00+00:00</published><updated>2016-03-13T21:23:00+00:00</updated><id>https://amethyst.rs/2016/03/13/twia-7</id><content type="html" xml:base="https://amethyst.rs/2016/03/13/twia-7.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Feb 22, 2016 – Mar 13, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the seventh issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week (or two). If you have any suggestions or ideas, feel free to call me
+out on &lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;No new pull requests landed this week.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Versions 0.3.0 and 0.4.0 of &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_tools&lt;/code&gt; have been rolled out! These
+releases add a new feature and fix several annoying bugs.
+    &lt;ul&gt;
+      &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst&lt;/code&gt; command-line tool now supports the &lt;code class=&quot;highlighter-rouge&quot;&gt;--release&lt;/code&gt; flag in the
+same manner as Cargo (&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/19&quot;&gt;#19&lt;/a&gt;). Thanks for the pull request,
+&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;@LucioFranco&lt;/a&gt;!&lt;/li&gt;
+      &lt;li&gt;The package was re-published to work with the latest version of Cargo
+(&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/17&quot;&gt;#17&lt;/a&gt;).&lt;/li&gt;
+      &lt;li&gt;Creating a new game project no longer reports “bad file descriptor” on
+affected systems (&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/18&quot;&gt;#18&lt;/a&gt;). Thanks again to &lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;@LucioFranco&lt;/a&gt;!&lt;/li&gt;
+      &lt;li&gt;Cargo’s exit status is now reported back to the shell rather than dropped.
+This resolves certain issues with our integration tests reporting certain
+faulty tests as successful (&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/13&quot;&gt;#13&lt;/a&gt;). This bugfix was made by
+[@White-Oak][wo] back in &lt;a href=&quot;/_posts/twia-5.html&quot;&gt;issue 5 of &lt;em&gt;TWIA&lt;/em&gt;&lt;/a&gt;, but was delayed due to
+testing.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The ECS design and implementation has been undergoing heavy churn lately. Feel
+free to drop in and contribute on our &lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt; channel.
+    &lt;ul&gt;
+      &lt;li&gt;On the ecs branch, both &lt;code class=&quot;highlighter-rouge&quot;&gt;Simulation&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;SimBuilder&lt;/code&gt; were prototyped (see
+the &lt;a href=&quot;https://github.com/ebkalderon/amethyst/wiki/ECS-Design&quot;&gt;wiki page&lt;/a&gt; for the design proposal).
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst/pull/25&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Processor&lt;/code&gt; error handling got a little Rustier&lt;/a&gt;, using &lt;code class=&quot;highlighter-rouge&quot;&gt;Result&lt;/code&gt;
+instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;Option&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/Oflor&quot;&gt;@Oflor&lt;/a&gt; has been working on his own external multi-threaded ECS library
+called &lt;a href=&quot;https://github.com/Oflor/zircon&quot;&gt;Zircon&lt;/a&gt; that aims to easily integrate with Amethyst. Check it
+out!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/wiki/Releases&quot;&gt;The release guidelines have been codified in the wiki.&lt;/a&gt; Though we already
+follow &lt;a href=&quot;http://semver.org/&quot;&gt;Semantic Versioning&lt;/a&gt;, there are certain cases not covered by the
+standard that needed to be defined explicitly (how to treat major/minor
+changes in the tools vs. in the engine, when to increment meta-package version
+numbers, etc). This should enforce consistency and keep breakage to a minimum,
+which will be especially important after 1.0.&lt;/li&gt;
+  &lt;li&gt;Along with this, the project may also adopt a more uniform Git branching
+workflow, possibly &lt;a href=&quot;http://nvie.com/posts/a-successful-git-branching-model/&quot;&gt;Git Flow&lt;/a&gt; by Vincent Driessen (suggestion by
+&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;@LucioFranco&lt;/a&gt;). Stale branches and merge conflicts need to be kept at
+bay, and this looks like an effective way to keep our repositories clean and
+iterate more quickly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/27&quot;&gt;Migrating to a GitHub organization (issue #27)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tools
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/17&quot;&gt;Issue using cargo to install (issue #17)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/19&quot;&gt;Add support for &lt;code class=&quot;highlighter-rouge&quot;&gt;--release&lt;/code&gt; flag (issue #19)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;LucioFranco&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;These past few weeks, I have been struggling to keep up with both my university
+studies and work, hence this unorthodox double-length issue of &lt;em&gt;TWIA&lt;/em&gt;. I
+apologize for the lack of public activity. Thankfully, my daily workload is
+starting to decrease, so my development pace is picking up!&lt;/p&gt;
+
+&lt;p&gt;Some meta-news: we may be getting a real website soon! I’m in the process of
+rewriting past &lt;em&gt;TWIA&lt;/em&gt; posts as Markdown files so they can be hosted on the open
+on GitHub, much like &lt;a href=&quot;http://this-week-in-rust.org/&quot;&gt;&lt;em&gt;This Week in Rust&lt;/em&gt;&lt;/a&gt;. I have purchased &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst.rs&lt;/code&gt;
+to be our official domain. So far, the main page points to nothing.
+&lt;a href=&quot;https://github.com/LucioFranco&quot;&gt;@LucioFranco&lt;/a&gt; (this guy has been really helpful lately!) put together a
+preliminary &lt;a href=&quot;https://github.com/ebkalderon/amethyst/pull/26&quot;&gt;pull request&lt;/a&gt; where we can get this working. We’re running
+into some issues with &lt;a href=&quot;https://github.com/cobalt-org/cobalt.rs&quot;&gt;Cobalt.rs&lt;/a&gt;, but we hope to resolve them soon.&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Feb 22, 2016 – Mar 13, 2016</summary></entry><entry><title type="html">This Week in Amethyst 6</title><link href="https://amethyst.rs/2016/02/23/twia-6.html" rel="alternate" type="text/html" title="This Week in Amethyst 6" /><published>2016-02-23T01:00:00+00:00</published><updated>2016-02-23T01:00:00+00:00</updated><id>https://amethyst.rs/2016/02/23/twia-6</id><content type="html" xml:base="https://amethyst.rs/2016/02/23/twia-6.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Feb 15, 2016 – Feb 22, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the sixth issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog bringing
+you the latest changes and updates regarding the Amethyst game engine every
+week. If you have any suggestions or ideas, feel free to call me out on
+&lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;No new pull requests landed this week.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A 2013 presentation titled &lt;a href=&quot;https://www.kth.se/social/upload/5289cb3ff276542440dd668c/bitsquid-behind-the-scenes.pdf&quot;&gt;&lt;em&gt;Bitsquid: Behind The Scenes&lt;/em&gt;&lt;/a&gt; has been added
+to the list of design inspiration documents. It covers a variety of topics,
+namely data-oriented design, job parallelism, rapid game development, and
+lessons learned from the game industry. Huge thanks to BitSquid developer
+&lt;a href=&quot;https://twitter.com/niklasfrykholm&quot;&gt;@niklasfrykholm&lt;/a&gt; of Autodesk for making this summary!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/blob/ecs/src/ecs/examples/proposed_usage.rs&quot;&gt;Implementation of the user-facing API of &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_ecs&lt;/code&gt; has begun&lt;/a&gt;. This
+brings us one step closer to merging the &lt;a href=&quot;http://ebkalderon.github.io/amethyst/glossary.html#Entity-component-system%20%28ECS%29%20model&quot;&gt;ECS game framework&lt;/a&gt; into the
+mainline. Join the discussion on &lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/10&quot;&gt;engine issue #10&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;p&gt;No new issues were opened this week!&lt;/p&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;p&gt;No new people have joined this week!&lt;/p&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/ebkalderon/amethyst/master/book/images/design/renderer_2.png&quot;&gt;Draft 2.0 of the renderer diagram was published to master this week.&lt;/a&gt;
+The design has been simplified considerably with the elimination of intermediate
+representation (IR) from the renderer, originally conceived for providing
+network transparency and tool slaving capabilities.
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/19#issuecomment-186502661&quot;&gt;This responsibility has been moved upward to the engine level&lt;/a&gt;.
+allowing for things like &lt;a href=&quot;https://en.wikipedia.org/wiki/Source_Filmmaker&quot;&gt;SFM&lt;/a&gt;-style demo record and replay and other
+goodies. Please leave your thoughts on &lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/19&quot;&gt;engine issue #19&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some meta-news: starting next issue, TWIA’s release schedule will shift from
+every Monday to every Sunday. This is to get our newsletter in sync with
+&lt;a href=&quot;https://this-week-in-rust.org/&quot;&gt;&lt;em&gt;This Week in Rust&lt;/em&gt;&lt;/a&gt; so readers aren’t stuck reading last week’s post
+every time. Hopefully this will make things more convenient in the long run!&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Feb 15, 2016 – Feb 22, 2016</summary></entry><entry><title type="html">This Week in Amethyst 5</title><link href="https://amethyst.rs/2016/02/15/twia-5.html" rel="alternate" type="text/html" title="This Week in Amethyst 5" /><published>2016-02-15T18:04:00+00:00</published><updated>2016-02-15T18:04:00+00:00</updated><id>https://amethyst.rs/2016/02/15/twia-5</id><content type="html" xml:base="https://amethyst.rs/2016/02/15/twia-5.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Feb 08, 2016 – Feb 15, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the fourth issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+&lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Seven pull requests, &lt;a href=&quot;http://github.com/ebkalderon/amethyst/pulls?q=is:pr+closed:2016-02-08..2016-02-15&quot;&gt;two in the engine&lt;/a&gt; and &lt;a href=&quot;http://github.com/ebkalderon/amethyst_tools/pulls?q=is:pr+closed:2016-02-08..2016-02-15&quot;&gt;five in the tools&lt;/a&gt; landed
+this week.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/tree/ecs/src/ecs&quot;&gt;Plenty of work has landed on the ecs branch this week!&lt;/a&gt; The revamped
+component storage and retrieval code, &lt;a href=&quot;https://github.com/ebkalderon/amethyst/pull/21&quot;&gt;proposed last week&lt;/a&gt; by
+&lt;a href=&quot;https://github.com/Oflor&quot;&gt;@Oflor&lt;/a&gt;, has finally landed. &lt;a href=&quot;https://github.com/lschmierer&quot;&gt;@lschmierer&lt;/a&gt; also wrote a set of
+benchmarks that will help us identify performance bottlenecks as we continue
+to refine our designs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/commit/629baed5a0f522a504a58f3fda5dafb103ea2a4c&quot;&gt;Version 0.2.4 of &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_tools&lt;/code&gt; has been released!&lt;/a&gt; Lots of
+bug-stomping and code cleanup in the latest version of the command-line build
+tool, largely thanks to &lt;a href=&quot;https://github.com/White-Oak&quot;&gt;@White-Oak&lt;/a&gt;. This release fixes tool-side issues
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/7&quot;&gt;#7&lt;/a&gt;, &lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/8&quot;&gt;#8&lt;/a&gt;, &lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/9&quot;&gt;#9&lt;/a&gt;, and &lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/10&quot;&gt;#10&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The build tool &lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/pull/15&quot;&gt;now returns a non-zero exit code if Cargo errors out&lt;/a&gt;,
+and the &lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/pull/14&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tests.sh&lt;/code&gt; script now halts properly&lt;/a&gt; when tests fail, fixing
+tools issue [#13]. Thanks again, &lt;a href=&quot;https://github.com/White-Oak&quot;&gt;@White-Oak&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/22&quot;&gt;Composable Shaders with a similar architecture to ClojureScript’s Gamma (issue #22)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/23&quot;&gt;Improve API documentation (issue #23)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tools
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/7&quot;&gt;Cargo stderr only prints after stdout (issue #7)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/8&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst new&lt;/code&gt; doesn’t put specified name in Cargo.toml (issue #8)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/9&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst new&lt;/code&gt; doesn’t put authors in Cargo.toml (issue #9)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/10&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst new&lt;/code&gt; doesn’t create &lt;code class=&quot;highlighter-rouge&quot;&gt;.gitignore&lt;/code&gt; file (issue #10)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/13&quot;&gt;Expose Cargo exit status if non-zero (issue #13)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/White-Oak&quot;&gt;White-Oak&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;More activity on the &lt;a href=&quot;http://ebkalderon.github.io/amethyst/glossary.html#Entity-component-system%20(ECS)%20model&quot;&gt;entity-component-system&lt;/a&gt; is happening on
+&lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;the Gitter chat&lt;/a&gt;. Please leave your input there or on
+[engine issue #10][e10].&lt;/p&gt;
+
+&lt;p&gt;Thanks for the contributions this week, everyone. Keep up the great work!&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Feb 08, 2016 – Feb 15, 2016</summary></entry><entry><title type="html">This Week in Amethyst 4</title><link href="https://amethyst.rs/2016/02/08/twia-4.html" rel="alternate" type="text/html" title="This Week in Amethyst 4" /><published>2016-02-08T18:40:00+00:00</published><updated>2016-02-08T18:40:00+00:00</updated><id>https://amethyst.rs/2016/02/08/twia-4</id><content type="html" xml:base="https://amethyst.rs/2016/02/08/twia-4.html">&lt;blockquote&gt;
+  &lt;p&gt;News for Feb 01, 2016 – Feb 08, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the fourth issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+&lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/pulls?q=is:pr+created:2016-02-01..2016-02-08&quot;&gt;One pull request&lt;/a&gt; for the engine was proposed this week, but hasn’t landed
+yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Work on fast and efficient component storage has begun on the &lt;a href=&quot;https://github.com/ebkalderon/amethyst/tree/ecs&quot;&gt;ecs branch&lt;/a&gt;
+(thanks to &lt;a href=&quot;https://github.com/lschmierer&quot;&gt;@lschmierer&lt;/a&gt; for the initial &lt;a href=&quot;https://github.com/lschmierer/anyvec&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnyVec&lt;/code&gt;&lt;/a&gt; implementation).
+&lt;a href=&quot;https://github.com/Oflor&quot;&gt;@Oflor&lt;/a&gt; is proposing another, possibly faster approach with
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst/pull/21&quot;&gt;pull request #21&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ebkalderon.github.io/amethyst/glossary.html#Entity-component-system%20(ECS)%20model&quot;&gt;A clear definition of the entity-component-system (ECS) model&lt;/a&gt; has been
+added to the Amethyst book’s glossary.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The “Hello World” chapter’s example code
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst/commit/2c9ab7f62add3880ec5159c517cc737c0eee14d5&quot;&gt;has been updated to use the 0.2.1 API&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/20&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Entities&lt;/code&gt; struct doesn’t properly recycle IDs (issue #20)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/lschmierer&quot;&gt;Lukas Schmierer (lschmierer)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;As the changes above suggest, we have settled on rolling our own
+entity-component-system library for Amethyst, rather than using existing
+solutions. This was done for reasons of efficiency and thread-safety. Join the
+discussion on &lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/10&quot;&gt;engine issue #10&lt;/a&gt; and on &lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;the public Gitter chat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The drafted &lt;a href=&quot;https://camo.githubusercontent.com/ac83c4ffa8cef072f6027efab57a7dcd74bbe04a/687474703a2f2f65626b616c6465726f6e2e6769746875622e696f2f616d6574687973742f696d616765732f64657369676e2f72656e64657265725f312e352e706e67&quot;&gt;parallel renderer design diagram&lt;/a&gt; is still open for public
+feedback. Please see [engine issue #19] if you have any suggestions or comments
+before implementation begins.&lt;/p&gt;
+
+&lt;p&gt;It’s been a busy week for all of us. Thanks for the good work everyone!&lt;/p&gt;</content><author><name></name></author><summary type="html">News for Feb 01, 2016 – Feb 08, 2016</summary></entry><entry><title type="html">This Week in Amethyst 3</title><link href="https://amethyst.rs/2016/02/02/twia-3.html" rel="alternate" type="text/html" title="This Week in Amethyst 3" /><published>2016-02-02T01:00:00+00:00</published><updated>2016-02-02T01:00:00+00:00</updated><id>https://amethyst.rs/2016/02/02/twia-3</id><content type="html" xml:base="https://amethyst.rs/2016/02/02/twia-3.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Jan 18, 2016 – Jan 25, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the third issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+[Gitter][gc].&lt;/p&gt;
+
+&lt;p&gt;Three pull requests, &lt;a href=&quot;http://github.com/ebkalderon/amethyst/pulls?q=is:pr+closed:2016-01-25..2016-02-01&quot;&gt;two in the engine&lt;/a&gt; and &lt;a href=&quot;http://github.com/ebkalderon/amethyst_tools/pulls?q=is:pr+closed:2016-01-25..2016-02-01&quot;&gt;one in the tools&lt;/a&gt;
+landed this week.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/pull/18&quot;&gt;Version 0.2.1 of Amethyst has been successfully rolled out!&lt;/a&gt; Both the
+engine and the CLI tool repositories have seen some major internal
+restructuring to increase modularity, fixing &lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/13&quot;&gt;engine issue #13&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst&lt;/code&gt; crate now re-exports two sub-crates: &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_engine&lt;/code&gt; (the
+core game engine), and &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_renderer&lt;/code&gt; (the rendering system). More crates
+are forthcoming.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools&quot;&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_cli&lt;/code&gt; repository has been renamed to &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_tools&lt;/code&gt;.&lt;/a&gt; This
+will host the entirety of Amethyst’s future tool suite.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We have adopted a leaner, meaner change log format (&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/17&quot;&gt;engine issue #17&lt;/a&gt;,
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/5&quot;&gt;tools issue #5&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/7#issuecomment-175896493&quot;&gt;All of the renderer code has been removed&lt;/a&gt; and its backend will be
+rewritten over &lt;a href=&quot;https://github.com/gfx-rs/gfx&quot;&gt;GFX&lt;/a&gt;. Thanks to &lt;a href=&quot;https://github.com/kvark&quot;&gt;@kvark&lt;/a&gt; of the GFX project for the
+collaboration!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;breaking-changes&quot;&gt;Breaking changes&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Due to engine restructuring, use statements must be updated to
+&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst::engine&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://crates.io/crates/amethyst_cli/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_cli&lt;/code&gt;&lt;/a&gt; has been discontinued. Please install
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_tools&lt;/code&gt;&lt;/a&gt; instead!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Engine
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/16&quot;&gt;Use GFX for rendering (issue #16)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/19&quot;&gt;Finalize renderer design (issue #19)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tools
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/4&quot;&gt;Reorganize project infrastructure (issue #4)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst_tools/issues/5&quot;&gt;Adopt new change log format (issue #5)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-contributors&quot;&gt;New contributors&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/kvark&quot;&gt;Dzimitry Malyshau (kvark)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://camo.githubusercontent.com/ac83c4ffa8cef072f6027efab57a7dcd74bbe04a/687474703a2f2f65626b616c6465726f6e2e6769746875622e696f2f616d6574687973742f696d616765732f64657369676e2f72656e64657265725f312e352e706e67&quot;&gt;A revamped parallel renderer design diagram&lt;/a&gt; has been drafted and is in
+need of public feedback before any implementation can begin. Please see
+&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/19&quot;&gt;engine issue #19&lt;/a&gt; for details.&lt;/p&gt;
+
+&lt;p&gt;More feedback is still needed on the thread-safe ECS design tracked by
+[engine issue #10][e10]. Should we use existing ECS solutions, or should we
+write our own? Leave your input there.&lt;/p&gt;
+
+&lt;p&gt;In other news, there has been a recent explosion of activity
+[on the Gitter chat][gc], which is wonderful to see. Have any questions,
+suggestions, or comments? Come join the conversation!&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Jan 18, 2016 – Jan 25, 2016</summary></entry><entry><title type="html">This Week in Amethyst 2</title><link href="https://amethyst.rs/2016/01/26/twia-2.html" rel="alternate" type="text/html" title="This Week in Amethyst 2" /><published>2016-01-26T01:00:00+00:00</published><updated>2016-01-26T01:00:00+00:00</updated><id>https://amethyst.rs/2016/01/26/twia-2</id><content type="html" xml:base="https://amethyst.rs/2016/01/26/twia-2.html">&lt;blockquote&gt;
+  &lt;p&gt;News from Jan 18, 2016 – Jan 25, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hello and welcome to the second issue of &lt;em&gt;This Week in Amethyst&lt;/em&gt;, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week. If you have any suggestions or ideas, feel free to call me out on
+&lt;a href=&quot;https://gitter.im/ebkalderon/amethyst&quot;&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/pulls?q=is:pr+closed:2016-01-18..2016-01-25&quot;&gt;Three pull requests&lt;/a&gt; landed this week.&lt;/p&gt;
+
+&lt;h2 id=&quot;whats-cooking-on-master&quot;&gt;What’s cooking on master?&lt;/h2&gt;
+
+&lt;h3 id=&quot;notable-additions&quot;&gt;Notable additions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/3#issuecomment-173722266&quot;&gt;Amethyst now builds correctly on stable and beta Rust release channels!&lt;/a&gt;
+However, this might not remain for long, as the unstable &lt;code class=&quot;highlighter-rouge&quot;&gt;std::boxed::FnBox&lt;/code&gt;
+is going to be incorporated soon. For those on stable Rust, get it while you
+can!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/11&quot;&gt;With that in mind, issue #11 has been resolved.&lt;/a&gt;. Further emphasis on
+Amethyst’s reliance on nightly Rust features is put in the Amethyst book’s
+“Hello World” tutorial. Thanks for the pull request, &lt;a href=&quot;https://github.com/cooperra&quot;&gt;@cooperra&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;As part of &lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/13&quot;&gt;issue #13&lt;/a&gt;, the engine has been split into multiple
+sub-crates: &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_engine&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;amethyst_renderer&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/blob/master/tests/state.rs&quot;&gt;The state machine gained some unit tests!&lt;/a&gt; Thanks for the pull request,
+&lt;a href=&quot;https://github.com/Oflor&quot;&gt;@Oflor&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/tree/master/tests&quot;&gt;Unit tests have been moved into the &lt;code class=&quot;highlighter-rouge&quot;&gt;tests&lt;/code&gt; folder&lt;/a&gt;, which isn’t quite
+idiomatic practice but is a good enough solution for now. Thanks again to
+&lt;a href=&quot;https://github.com/Oflor&quot;&gt;@Oflor&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;new-issues&quot;&gt;New issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/11&quot;&gt;Implement thread-safe ECS (issue #10)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/13&quot;&gt;Reorganize project infrastructure (issue #13)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ebkalderon/amethyst/issues/16&quot;&gt;Use GFX for rendering (issue #16)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;New contributors&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Oflor&quot;&gt;Oflor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/cooperra&quot;&gt;Robbie Cooper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-announcements&quot;&gt;Other announcements&lt;/h2&gt;
+
+&lt;p&gt;Once issue #13 is closed and the unit test matter is resolved, expect the first
+official release of the “Explosive Cleric” series, Amethyst 0.2.0!&lt;/p&gt;</content><author><name></name></author><summary type="html">News from Jan 18, 2016 – Jan 25, 2016</summary></entry></feed>

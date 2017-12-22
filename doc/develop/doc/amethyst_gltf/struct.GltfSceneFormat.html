@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GltfSceneFormat` struct in crate `amethyst_gltf`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GltfSceneFormat">
+
+    <title>amethyst_gltf::GltfSceneFormat - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct GltfSceneFormat</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>amethyst_gltf</a></p><script>window.sidebarCurrent = {name: 'GltfSceneFormat', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>amethyst_gltf</a>::<wbr><a class="struct" href=''>GltfSceneFormat</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/amethyst_gltf/format/mod.rs.html#29' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GltfSceneFormat;</pre><div class='docblock'><p>Gltf scene format, will cause the whole default scene to be loaded from the given file.</p>
+
+<p>Using the <code>GltfSceneLoaderSystem</code> a <code>Handle&lt;GltfSceneAsset&gt;</code> from this format can be attached
+to an entity in ECS, and the system will then load the full scene using the given entity
+as the root node of the scene hierarchy.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Format&lt;GltfSceneAsset&gt;' class='impl'><span class='in-band'><code>impl <a class="trait" href="../amethyst_assets/asset/trait.Format.html" title="trait amethyst_assets::asset::Format">Format</a>&lt;<a class="struct" href="../amethyst_gltf/struct.GltfSceneAsset.html" title="struct amethyst_gltf::GltfSceneAsset">GltfSceneAsset</a>&gt; for <a class="struct" href="../amethyst_gltf/struct.GltfSceneFormat.html" title="struct amethyst_gltf::GltfSceneFormat">GltfSceneFormat</a></code><a href='#impl-Format&lt;GltfSceneAsset&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_gltf/format/mod.rs.html#103-122' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedconstant.NAME' class="associatedconstant"><span id='NAME.v' class='invisible'><code>const <a href='../amethyst_assets/asset/trait.Format.html#associatedconstant.NAME' class="constant"><b>NAME</b></a>: &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<div class='docblock'><pre class="rust ">
+<span class="ident">NAME</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span> <span class="op">=</span> <span class="string">&quot;GLTFScene&quot;</span></pre>
+<p>A unique identifier for this format.</p>
+</div><h4 id='associatedtype.Options' class="type"><span id='Options.t' class='invisible'><code>type <a href='../amethyst_assets/asset/trait.Format.html#associatedtype.Options' class="type">Options</a> = <a class="struct" href="../amethyst_gltf/struct.GltfSceneOptions.html" title="struct amethyst_gltf::GltfSceneOptions">GltfSceneOptions</a></code></span></h4>
+<div class='docblock'><p>Options specific to the format, which are passed to <code>import</code>. E.g. for textures this would be stuff like mipmap levels and sampler info. <a href="../amethyst_assets/asset/trait.Format.html#associatedtype.Options">Read more</a></p>
+</div><h4 id='method.import' class="method"><span id='import.v' class='invisible'><code>fn <a href='../amethyst_assets/asset/trait.Format.html#tymethod.import' class='fnname'>import</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;source: <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/arc/struct.Arc.html" title="struct alloc::arc::Arc">Arc</a>&lt;<a class="trait" href="../amethyst_assets/source/trait.Source.html" title="trait amethyst_assets::source::Source">Source</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;options: <a class="struct" href="../amethyst_gltf/struct.GltfSceneOptions.html" title="struct amethyst_gltf::GltfSceneOptions">GltfSceneOptions</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;_create_reload: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>) -&gt; <a class="type" href="../amethyst_assets/error/type.Result.html" title="type amethyst_assets::error::Result">AssetResult</a>&lt;<a class="struct" href="../amethyst_assets/asset/struct.FormatValue.html" title="struct amethyst_assets::asset::FormatValue">FormatValue</a>&lt;<a class="struct" href="../amethyst_gltf/struct.GltfSceneAsset.html" title="struct amethyst_gltf::GltfSceneAsset">GltfSceneAsset</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/amethyst_gltf/format/mod.rs.html#108-121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reads the given bytes and produces asset data. <a href="../amethyst_assets/asset/trait.Format.html#tymethod.import">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_gltf";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

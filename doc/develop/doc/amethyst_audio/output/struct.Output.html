@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Output` struct in crate `amethyst_audio`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Output">
+
+    <title>amethyst_audio::output::Output - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Output</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>amethyst_audio</a>::<wbr><a href='index.html'>output</a></p><script>window.sidebarCurrent = {name: 'Output', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>amethyst_audio</a>::<wbr><a href='index.html'>output</a>::<wbr><a class="struct" href=''>Output</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/amethyst_audio/output.rs.html#17-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Output { /* fields omitted */ }</pre><div class='docblock'><p>A speaker(s) through which audio can be played.</p>
+
+<p>By convention, the default output is stored as a resouce in the <code>World</code>.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../amethyst_audio/output/struct.Output.html" title="struct amethyst_audio::output::Output">Output</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#21-87' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.name' class="method"><span id='name.v' class='invisible'><code>pub fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#23-25' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the name of the output</p>
+</div><h4 id='method.try_play_once' class="method"><span id='try_play_once.v' class='invisible'><code>pub fn <a href='#method.try_play_once' class='fnname'>try_play_once</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;source: &amp;<a class="struct" href="../../amethyst_audio/struct.Source.html" title="struct amethyst_audio::Source">Source</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;volume: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../amethyst_audio/struct.DecoderError.html" title="struct amethyst_audio::DecoderError">DecoderError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#30-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Play a sound once.  A volume of 1.0 is unchanged, while 0.0 is silent.</p>
+
+<p>This will return an Error if the loaded audio file in source could not be decoded.</p>
+</div><h4 id='method.play_once' class="method"><span id='play_once.v' class='invisible'><code>pub fn <a href='#method.play_once' class='fnname'>play_once</a>(&amp;self, source: &amp;<a class="struct" href="../../amethyst_audio/struct.Source.html" title="struct amethyst_audio::Source">Source</a>, volume: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#52-56' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Play a sound once. A volume of 1.0 is unchanged, while 0.0 is silent.</p>
+
+<p>This may silently fail, in order to get error information use <code>try_play_once</code>.</p>
+</div><h4 id='method.play_n_times' class="method"><span id='play_n_times.v' class='invisible'><code>pub fn <a href='#method.play_n_times' class='fnname'>play_n_times</a>(&amp;self, source: &amp;<a class="struct" href="../../amethyst_audio/struct.Source.html" title="struct amethyst_audio::Source">Source</a>, volume: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, n: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#61-65' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Play a sound n times. A volume of 1.0 is unchanged, while 0.0 is silent.</p>
+
+<p>This may silently fail, in order to get error information use <code>try_play_n_times</code>.</p>
+</div><h4 id='method.try_play_n_times' class="method"><span id='try_play_n_times.v' class='invisible'><code>pub fn <a href='#method.try_play_n_times' class='fnname'>try_play_n_times</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;source: &amp;<a class="struct" href="../../amethyst_audio/struct.Source.html" title="struct amethyst_audio::Source">Source</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;volume: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;n: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../amethyst_audio/struct.DecoderError.html" title="struct amethyst_audio::DecoderError">DecoderError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#70-86' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Play a sound n times. A volume of 1.0 is unchanged, while 0.0 is silent.</p>
+
+<p>This will return an Error if the loaded audio file in source could not be decoded.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../amethyst_audio/output/struct.Output.html" title="struct amethyst_audio::output::Output">Output</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#89-96' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, formatter: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">FmtResult</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_audio/output.rs.html#90-95' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "amethyst_audio";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Time` struct in crate `amethyst_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Time">
+
+    <title>amethyst_core::timing::Time - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Time</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>amethyst_core</a>::<wbr><a href='index.html'>timing</a></p><script>window.sidebarCurrent = {name: 'Time', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>amethyst_core</a>::<wbr><a href='index.html'>timing</a>::<wbr><a class="struct" href=''>Time</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/amethyst_core/timing.rs.html#7-30' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Time {
+    pub last_fixed_update: <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/struct.Instant.html" title="struct std::time::Instant">Instant</a>,
+    // some fields omitted
+}</pre><div class='docblock'><p>Frame timing values.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.last_fixed_update" class="structfield small-section-header">
+                           <a href="#structfield.last_fixed_update" class="anchor field"></a>
+                           <span id="last_fixed_update.v" class='invisible'>
+                           <code>last_fixed_update: <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/struct.Instant.html" title="struct std::time::Instant">Instant</a></code>
+                           </span></span><div class='docblock'><p>Time at which <code>State::fixed_update</code> was last called.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#32-168' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.delta_seconds' class="method"><span id='delta_seconds.v' class='invisible'><code>pub fn <a href='#method.delta_seconds' class='fnname'>delta_seconds</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#34-36' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time difference between frames in seconds.</p>
+</div><h4 id='method.delta_time' class="method"><span id='delta_time.v' class='invisible'><code>pub fn <a href='#method.delta_time' class='fnname'>delta_time</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#39-41' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time difference between frames.</p>
+</div><h4 id='method.delta_real_seconds' class="method"><span id='delta_real_seconds.v' class='invisible'><code>pub fn <a href='#method.delta_real_seconds' class='fnname'>delta_real_seconds</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#44-46' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time difference between frames in seconds ignoring the time speed multiplier.</p>
+</div><h4 id='method.delta_real_time' class="method"><span id='delta_real_time.v' class='invisible'><code>pub fn <a href='#method.delta_real_time' class='fnname'>delta_real_time</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#49-51' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time difference between frames ignoring the time speed multiplier.</p>
+</div><h4 id='method.fixed_seconds' class="method"><span id='fixed_seconds.v' class='invisible'><code>pub fn <a href='#method.fixed_seconds' class='fnname'>fixed_seconds</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#54-56' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the fixed time step in seconds.</p>
+</div><h4 id='method.fixed_time' class="method"><span id='fixed_time.v' class='invisible'><code>pub fn <a href='#method.fixed_time' class='fnname'>fixed_time</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#59-61' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the fixed time step.</p>
+</div><h4 id='method.frame_number' class="method"><span id='frame_number.v' class='invisible'><code>pub fn <a href='#method.frame_number' class='fnname'>frame_number</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#64-66' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the current frame number.  This increments by 1 every frame.  There is no frame 0.</p>
+</div><h4 id='method.last_fixed_update' class="method"><span id='last_fixed_update.v-1' class='invisible'><code>pub fn <a href='#method.last_fixed_update' class='fnname'>last_fixed_update</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/struct.Instant.html" title="struct std::time::Instant">Instant</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#69-71' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time at which the last fixed update was called.</p>
+</div><h4 id='method.absolute_time' class="method"><span id='absolute_time.v' class='invisible'><code>pub fn <a href='#method.absolute_time' class='fnname'>absolute_time</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#74-76' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time since the start of the game, taking into account the speed multiplier.</p>
+</div><h4 id='method.absolute_time_seconds' class="method"><span id='absolute_time_seconds.v' class='invisible'><code>pub fn <a href='#method.absolute_time_seconds' class='fnname'>absolute_time_seconds</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#79-81' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time since the start of the game as seconds, taking into account the speed multiplier.</p>
+</div><h4 id='method.absolute_real_time' class="method"><span id='absolute_real_time.v' class='invisible'><code>pub fn <a href='#method.absolute_real_time' class='fnname'>absolute_real_time</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#84-86' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time since the start of the game, ignoring the speed multiplier.</p>
+</div><h4 id='method.absolute_real_time_seconds' class="method"><span id='absolute_real_time_seconds.v' class='invisible'><code>pub fn <a href='#method.absolute_real_time_seconds' class='fnname'>absolute_real_time_seconds</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#89-91' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the time since the start of the game as seconds, ignoring the speed multiplier.</p>
+</div><h4 id='method.time_scale' class="method"><span id='time_scale.v' class='invisible'><code>pub fn <a href='#method.time_scale' class='fnname'>time_scale</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#94-96' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the current time speed multiplier.</p>
+</div><h4 id='method.set_delta_seconds' class="method"><span id='set_delta_seconds.v' class='invisible'><code>pub fn <a href='#method.set_delta_seconds' class='fnname'>set_delta_seconds</a>(&amp;mut self, secs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#103-111' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the total number of frames that have been played in this session.
+Sets both <code>delta_seconds</code> and <code>delta_time</code> based on the seconds given.</p>
+
+<p>This should only be called by the engine.  Bad things might happen if you call this in
+your game.</p>
+</div><h4 id='method.set_delta_time' class="method"><span id='set_delta_time.v' class='invisible'><code>pub fn <a href='#method.set_delta_time' class='fnname'>set_delta_time</a>(&amp;mut self, time: <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#117-125' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets both <code>delta_time</code> and <code>delta_seconds</code> based on the duration given.</p>
+
+<p>This should only be called by the engine.  Bad things might happen if you call this in
+your game.</p>
+</div><h4 id='method.set_fixed_seconds' class="method"><span id='set_fixed_seconds.v' class='invisible'><code>pub fn <a href='#method.set_fixed_seconds' class='fnname'>set_fixed_seconds</a>(&amp;mut self, secs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#130-133' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets both <code>fixed_seconds</code> and <code>fixed_time</code> based on the seconds given.</p>
+</div><h4 id='method.set_fixed_time' class="method"><span id='set_fixed_time.v' class='invisible'><code>pub fn <a href='#method.set_fixed_time' class='fnname'>set_fixed_time</a>(&amp;mut self, time: <a class="struct" href="https://doc.rust-lang.org/nightly/std/time/duration/struct.Duration.html" title="struct std::time::duration::Duration">Duration</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#136-139' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets both <code>fixed_time</code> and <code>fixed_seconds</code> based on the duration given.</p>
+</div><h4 id='method.increment_frame_number' class="method"><span id='increment_frame_number.v' class='invisible'><code>pub fn <a href='#method.increment_frame_number' class='fnname'>increment_frame_number</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#145-147' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Increments the current frame number by 1.</p>
+
+<p>This should only be called by the engine.  Bad things might happen if you call this in
+your game.</p>
+</div><h4 id='method.set_time_scale' class="method"><span id='set_time_scale.v' class='invisible'><code>pub fn <a href='#method.set_time_scale' class='fnname'>set_time_scale</a>(&amp;mut self, multiplier: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#154-159' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the time multiplier that affects how time values are computed,
+effectively slowing or speeding up your game.</p>
+
+<h2 id='panics' class='section-header'><a href='#panics'>Panics</a></h2>
+<p>This will panic if multiplier is NaN, Infinity, or less than 0.</p>
+</div><h4 id='method.finish_fixed_update' class="method"><span id='finish_fixed_update.v' class='invisible'><code>pub fn <a href='#method.finish_fixed_update' class='fnname'>finish_fixed_update</a>(&amp;mut self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#165-167' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Indicates a fixed update just finished.</p>
+
+<p>This should only be called by the engine.  Bad things might happen if you call this in
+your game.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#6' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#170-186' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; <a class="struct" href="../../amethyst_core/timing/struct.Time.html" title="struct amethyst_core::timing::Time">Time</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/amethyst_core/timing.rs.html#171-185' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "amethyst_core";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

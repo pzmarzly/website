@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["bundle",""],["frame_limiter","Frame limiter"],["orientation","Orientation of objects"],["timing","Utilities for working with time."],["transform","`amethyst` transform ecs module"]],"type":[["ThreadPool","A rayon thread pool wrapped in an `Arc`. This should be used as resource in `World`."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["ObjError","Error type of `ObjFormat`"]],"struct":[["ObjFormat","Allows loading from Wavefront files see: https://en.wikipedia.org/wiki/Wavefront_.obj_file"]],"type":[["VerticesFuture","A future which will eventually have an vertices available."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["FrameRateLimitStrategy","Frame rate limiting strategy"]],"struct":[["FrameLimiter","Frame limiter"],["FrameRateLimitConfig","Frame limit config"]]});

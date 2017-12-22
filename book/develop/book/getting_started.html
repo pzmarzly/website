@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Getting Started - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li><a href="./intro.html"><strong>1.</strong> Introduction</a></li><li><a href="./getting_started.html" class="active"><strong>2.</strong> Getting Started</a></li><li><a href="./simple_application.html"><strong>3.</strong> A Simple Application</a></li><li><a href="pong_tutorial.html"><strong>4.</strong> Pong Tutorial</a></li><li><ul class="section"><li><a href="./pong_tutorial/pong_tutorial_01.html"><strong>4.1.</strong> Opening (and closing!) a window</a></li><li><a href="./pong_tutorial/pong_tutorial_02.html"><strong>4.2.</strong> Drawing the paddles</a></li></ul></li><li><a href="./glossary.html"><strong>5.</strong> Glossary</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="./getting_started.html#getting-started" id="getting-started"><h1>Getting started</h1></a>
+<a class="header" href="./getting_started.html#setting-up-rust" id="setting-up-rust"><h2>Setting up Rust</h2></a>
+<p>Make sure to have the latest stable of Rust installed.
+We recommend using <a href="https://rustup.rs">rustup</a> for that.</p>
+<p>After you did that, Rust should be fully installed.</p>
+<a class="header" href="./getting_started.html#required-dependencies" id="required-dependencies"><h2>Required dependencies</h2></a>
+<p>If you are on Linux, you'll need to install <code>libasound2-dev</code>.</p>
+<a class="header" href="./getting_started.html#setting-up-amethyst" id="setting-up-amethyst"><h2>Setting up Amethyst</h2></a>
+<p>You can either use the <a href="https://github.com/amethyst/tools">Amethyst CLI</a> or just cargo to set up your project.
+After executing</p>
+<pre><code>amethyst new game
+</code></pre>
+<p>you should get <code>Cargo.toml</code>, <code>src/main.rs</code> and <code>resources/display_config.ron</code>.
+In case you're doing this with <code>cargo</code>, here's what you need to do:</p>
+<ul>
+<li>Add <code>amethyst</code> as dependency in your <code>Cargo.toml</code>.</li>
+<li>Create a <code>resources</code> folder and put a <code>display_config.ron</code> in it.</li>
+<li>Start with one of the [examples][ex] from the Amethyst repository (e.g. <code>window</code>)
+for the source code. Watch out to use the right example for the version of Amethyst
+you specified in <code>Cargo.toml</code>.</li>
+</ul>
+<p>We don't have any tutorials yet, but there's a <a href="https://gitter.im/amethyst/general">Gitter room</a> where you can
+ask in case you want an explanation for something. If you'd like to help out,
+a tutorial would be much appreciated!</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="./intro.html" class="mobile-nav-chapters previous" title="Previous chapter">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="./simple_application.html" class="mobile-nav-chapters next" title="Next chapter">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="./intro.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="./simple_application.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </body>
+</html>

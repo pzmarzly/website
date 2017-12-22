@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Bindings","Used for saving and loading input settings."],["InputHandler","This struct holds state information about input devices."]]});

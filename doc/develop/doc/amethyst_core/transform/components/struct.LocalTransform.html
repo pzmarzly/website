@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LocalTransform` struct in crate `amethyst_core`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LocalTransform">
+
+    <title>amethyst_core::transform::components::LocalTransform - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct LocalTransform</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../index.html'>amethyst_core</a>::<wbr><a href='../index.html'>transform</a>::<wbr><a href='index.html'>components</a></p><script>window.sidebarCurrent = {name: 'LocalTransform', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>amethyst_core</a>::<wbr><a href='../index.html'>transform</a>::<wbr><a href='index.html'>components</a>::<wbr><a class="struct" href=''>LocalTransform</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#12-19' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct LocalTransform {
+    pub rotation: Quaternion&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;,
+    pub scale: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;,
+    pub translation: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;,
+}</pre><div class='docblock'><p>Local position, rotation, and scale (from parent if it exists).</p>
+
+<p>Used for rendering position and orientation.</p>
+</div><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.rotation" class="structfield small-section-header">
+                           <a href="#structfield.rotation" class="anchor field"></a>
+                           <span id="rotation.v" class='invisible'>
+                           <code>rotation: Quaternion&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Quaternion [w (scalar), x, y, z]</p>
+</div><span id="structfield.scale" class="structfield small-section-header">
+                           <a href="#structfield.scale" class="anchor field"></a>
+                           <span id="scale.v" class='invisible'>
+                           <code>scale: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Scale vector [x, y, z]</p>
+</div><span id="structfield.translation" class="structfield small-section-header">
+                           <a href="#structfield.translation" class="anchor field"></a>
+                           <span id="translation.v" class='invisible'>
+                           <code>translation: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code>
+                           </span></span><div class='docblock'><p>Translation/position vector [x, y, z]</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#21-158' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.look_at' class="method"><span id='look_at.v' class='invisible'><code>pub fn <a href='#method.look_at' class='fnname'>look_at</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;position: Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#23-29' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Rotate to look at a point in space (without rolling)</p>
+</div><h4 id='method.matrix' class="method"><span id='matrix.v' class='invisible'><code>pub fn <a href='#method.matrix' class='fnname'>matrix</a>(&amp;self) -&gt; Matrix4&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#36-42' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the local object matrix for the transform.</p>
+
+<p>Combined with the parent&#39;s global <code>Transform</code> component it gives
+the global (or world) matrix for the current entity.</p>
+</div><h4 id='method.move_forward' class="method"><span id='move_forward.v' class='invisible'><code>pub fn <a href='#method.move_forward' class='fnname'>move_forward</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;amount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#45-47' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Move relatively to its current position and orientation.</p>
+</div><h4 id='method.move_global' class="method"><span id='move_global.v' class='invisible'><code>pub fn <a href='#method.move_global' class='fnname'>move_global</a>(&amp;mut self, direction: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#53-56' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Move relatively to its current position, but independently from its orientation.
+Ideally, first normalize the direction and then multiply it
+by whatever amount you want to move before passing the vector to this method</p>
+</div><h4 id='method.move_local' class="method"><span id='move_local.v' class='invisible'><code>pub fn <a href='#method.move_local' class='fnname'>move_local</a>(&amp;mut self, axis: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;, amount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#60-65' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Move relatively to its current position and orientation.</p>
+</div><h4 id='method.move_right' class="method"><span id='move_right.v' class='invisible'><code>pub fn <a href='#method.move_right' class='fnname'>move_right</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;amount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#68-70' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Move relatively to its current position and orientation.</p>
+</div><h4 id='method.move_up' class="method"><span id='move_up.v' class='invisible'><code>pub fn <a href='#method.move_up' class='fnname'>move_up</a>(&amp;mut self, orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, amount: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#73-75' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Move relatively to its current position and orientation.</p>
+</div><h4 id='method.pitch_global' class="method"><span id='pitch_global.v' class='invisible'><code>pub fn <a href='#method.pitch_global' class='fnname'>pitch_global</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#78-80' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Pitch relatively to the world.</p>
+</div><h4 id='method.pitch_local' class="method"><span id='pitch_local.v' class='invisible'><code>pub fn <a href='#method.pitch_local' class='fnname'>pitch_local</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#83-85' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Pitch relatively to its own rotation.</p>
+</div><h4 id='method.roll_global' class="method"><span id='roll_global.v' class='invisible'><code>pub fn <a href='#method.roll_global' class='fnname'>roll_global</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#88-90' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Roll relatively to the world.</p>
+</div><h4 id='method.roll_local' class="method"><span id='roll_local.v' class='invisible'><code>pub fn <a href='#method.roll_local' class='fnname'>roll_local</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#93-95' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Roll relatively to its own rotation.</p>
+</div><h4 id='method.rotate' class="method"><span id='rotate.v' class='invisible'><code>pub fn <a href='#method.rotate' class='fnname'>rotate</a>(&amp;mut self, quat: Quaternion&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#99-102' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Add a rotation to the current rotation</p>
+</div><h4 id='method.rotate_global' class="method"><span id='rotate_global.v' class='invisible'><code>pub fn <a href='#method.rotate_global' class='fnname'>rotate_global</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;axis: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#106-111' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Rotate relatively to the world</p>
+</div><h4 id='method.rotate_local' class="method"><span id='rotate_local.v' class='invisible'><code>pub fn <a href='#method.rotate_local' class='fnname'>rotate_local</a>(&amp;mut self, axis: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;, angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#115-122' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Rotate relatively to the current orientation</p>
+</div><h4 id='method.set_position' class="method"><span id='set_position.v' class='invisible'><code>pub fn <a href='#method.set_position' class='fnname'>set_position</a>(&amp;mut self, position: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#125-128' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set the position.</p>
+</div><h4 id='method.set_rotation' class="method"><span id='set_rotation.v' class='invisible'><code>pub fn <a href='#method.set_rotation' class='fnname'>set_rotation</a>&lt;D:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;&gt;&gt;(&amp;mut self, x: D, y: D, z: D) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#131-137' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set the rotation using Euler x, y, z.</p>
+</div><h4 id='method.to_view_matrix' class="method"><span id='to_view_matrix.v' class='invisible'><code>pub fn <a href='#method.to_view_matrix' class='fnname'>to_view_matrix</a>(&amp;self, orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>) -&gt; Matrix4&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#140-147' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Calculate the view matrix from the given data.</p>
+</div><h4 id='method.yaw_global' class="method"><span id='yaw_global.v' class='invisible'><code>pub fn <a href='#method.yaw_global' class='fnname'>yaw_global</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#150-152' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Yaw relatively to the world.</p>
+</div><h4 id='method.yaw_local' class="method"><span id='yaw_local.v' class='invisible'><code>pub fn <a href='#method.yaw_local' class='fnname'>yaw_local</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;orientation: &amp;<a class="struct" href="../../../amethyst_core/orientation/struct.Orientation.html" title="struct amethyst_core::orientation::Orientation">Orientation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;angle: Deg&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#155-157' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Yaw relatively to its own rotation.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#170-177' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#174-176' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a new <code>LocalTransform</code>.</p>
+
+<p>If you call <code>matrix</code> on this, then you would get an identity matrix.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#11' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#160-168' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#161-167' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Component' class='impl'><span class='in-band'><code>impl Component for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-Component' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#179-181' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Storage' class="type"><span id='Storage.t' class='invisible'><code>type <a href='#associatedtype.Storage' class="type">Storage</a> = FlaggedStorage&lt;Self, DenseVecStorage&lt;Self&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Associated storage type for this component.</p>
+</div></div><h3 id='impl-Transform&lt;Point3&lt;f32&gt;&gt;' class='impl'><span class='in-band'><code>impl Transform&lt;Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;&gt; for <a class="struct" href="../../../amethyst_core/transform/components/struct.LocalTransform.html" title="struct amethyst_core::transform::components::LocalTransform">LocalTransform</a></code><a href='#impl-Transform&lt;Point3&lt;f32&gt;&gt;' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#183-234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.one' class="method"><span id='one.v' class='invisible'><code>fn <a href='#method.one' class='fnname'>one</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#184-186' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create an identity transformation. That is, a transformation which does nothing. <a href="#tymethod.one">Read more</a></p>
+</div><h4 id='method.look_at-1' class="method"><span id='look_at.v-1' class='invisible'><code>fn <a href='#method.look_at' class='fnname'>look_at</a>(eye: Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;, center: Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;, up: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#188-196' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a transformation that rotates a vector to look at <code>center</code> from <code>eye</code>, using <code>up</code> for orientation. <a href="#tymethod.look_at">Read more</a></p>
+</div><h4 id='method.transform_vector' class="method"><span id='transform_vector.v' class='invisible'><code>fn <a href='#method.transform_vector' class='fnname'>transform_vector</a>(&amp;self, vec: Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; Vector3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#198-201' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Transform a vector using this transform.</p>
+</div><h4 id='method.transform_point' class="method"><span id='transform_point.v' class='invisible'><code>fn <a href='#method.transform_point' class='fnname'>transform_point</a>(&amp;self, point: Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;) -&gt; Point3&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#203-206' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Transform a point using this transform.</p>
+</div><h4 id='method.concat' class="method"><span id='concat.v' class='invisible'><code>fn <a href='#method.concat' class='fnname'>concat</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#208-216' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Combine this transform with another, yielding a new transformation which has the effects of both. <a href="#tymethod.concat">Read more</a></p>
+</div><h4 id='method.inverse_transform' class="method"><span id='inverse_transform.v' class='invisible'><code>fn <a href='#method.inverse_transform' class='fnname'>inverse_transform</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/amethyst_core/transform/components/local_transform.rs.html#218-233' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Create a transform that &quot;un-does&quot; this one.</p>
+</div><h4 id='method.concat_self' class="method"><span id='concat_self.v' class='invisible'><code>fn <a href='#method.concat_self' class='fnname'>concat_self</a>(&amp;mut self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span></h4>
+<div class='docblock'><p>Combine this transform with another, in-place.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "amethyst_core";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

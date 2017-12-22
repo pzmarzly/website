@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `amethyst_animation` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, amethyst_animation">
+
+    <title>amethyst_animation - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate amethyst_animation</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'amethyst_animation', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>amethyst_animation</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/amethyst_animation/lib.rs.html#1-22' title='goto source code'>[src]</a></span></h1>
+<h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Animation.html"
+                                  title='struct amethyst_animation::Animation'>Animation</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines a single animation.
+Defines relationships between the node index in <code>AnimationHierarchy</code> and a <code>Sampler</code> handle.
+If the animation only targets a single node index, <code>AnimationHierarchy</code> is not required.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationBundle.html"
+                                  title='struct amethyst_animation::AnimationBundle'>AnimationBundle</a></td>
+                           <td class='docblock-short'>
+                                <p>Bundle for a complete animation setup including sampler interpolation and animation control.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationControl.html"
+                                  title='struct amethyst_animation::AnimationControl'>AnimationControl</a></td>
+                           <td class='docblock-short'>
+                                <p>Attaches to an entity, to control what animations are currently active</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationControlSystem.html"
+                                  title='struct amethyst_animation::AnimationControlSystem'>AnimationControlSystem</a></td>
+                           <td class='docblock-short'>
+                                <p>System for setting up animations, should run before <code>SamplerInterpolationSystem</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationHierarchy.html"
+                                  title='struct amethyst_animation::AnimationHierarchy'>AnimationHierarchy</a></td>
+                           <td class='docblock-short'>
+                                <p>Defines the hierarchy of nodes that a single animation can control.
+Attach to the root entity that an animation can be defined for.
+Only required for animations which targets more than a single node.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AnimationSet.html"
+                                  title='struct amethyst_animation::AnimationSet'>AnimationSet</a></td>
+                           <td class='docblock-short'>
+                                <p>Attaches to an entity that have animations, with links to all animations that can be run on the
+entity. Is not used directly by the animation systems, provided for convenience.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Sampler.html"
+                                  title='struct amethyst_animation::Sampler'>Sampler</a></td>
+                           <td class='docblock-short'>
+                                <p>Sampler defines a single animation for a single attribute of the <code>LocalTransform</code> of the entity
+it is attached to.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SamplerControl.html"
+                                  title='struct amethyst_animation::SamplerControl'>SamplerControl</a></td>
+                           <td class='docblock-short'>
+                                <p>Run the sampler on the attached entity</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SamplerControlSet.html"
+                                  title='struct amethyst_animation::SamplerControlSet'>SamplerControlSet</a></td>
+                           <td class='docblock-short'>
+                                <p>Sampler control set, containing optional samplers for each of the possible channels.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SamplerInterpolationSystem.html"
+                                  title='struct amethyst_animation::SamplerInterpolationSystem'>SamplerInterpolationSystem</a></td>
+                           <td class='docblock-short'>
+                                <p>System for interpolating active samplers.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SamplingBundle.html"
+                                  title='struct amethyst_animation::SamplingBundle'>SamplingBundle</a></td>
+                           <td class='docblock-short'>
+                                <p>Bundle for only the sampler interpolation.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AnimationCommand.html"
+                                  title='enum amethyst_animation::AnimationCommand'>AnimationCommand</a></td>
+                           <td class='docblock-short'>
+                                <p>Animation command</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AnimationOutput.html"
+                                  title='enum amethyst_animation::AnimationOutput'>AnimationOutput</a></td>
+                           <td class='docblock-short'>
+                                <p>The actual animation data for a single attribute</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ControlState.html"
+                                  title='enum amethyst_animation::ControlState'>ControlState</a></td>
+                           <td class='docblock-short'>
+                                <p>State of animation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EndControl.html"
+                                  title='enum amethyst_animation::EndControl'>EndControl</a></td>
+                           <td class='docblock-short'>
+                                <p>Control handling of animation/sampler end</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.InterpolationType.html"
+                                  title='enum amethyst_animation::InterpolationType'>InterpolationType</a></td>
+                           <td class='docblock-short'>
+                                <p>Supported interpolation functions</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RestState.html"
+                                  title='enum amethyst_animation::RestState'>RestState</a></td>
+                           <td class='docblock-short'>
+                                <p>The rest state for a single attribute</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Interpolate.html"
+                                  title='trait amethyst_animation::Interpolate'>Interpolate</a></td>
+                           <td class='docblock-short'>
+                                <p>Interpolate over data set of the given type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.InterpolationFunction.html"
+                                  title='trait amethyst_animation::InterpolationFunction'>InterpolationFunction</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait used if an outside user wants to supply their own interpolation function</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.pause_animation.html"
+                                  title='fn amethyst_animation::pause_animation'>pause_animation</a></td>
+                           <td class='docblock-short'>
+                                <p>Pause the running animation on the given entity.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.play_animation.html"
+                                  title='fn amethyst_animation::play_animation'>play_animation</a></td>
+                           <td class='docblock-short'>
+                                <p>Play a given animation on the given entity.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.toggle_animation.html"
+                                  title='fn amethyst_animation::toggle_animation'>toggle_animation</a></td>
+                           <td class='docblock-short'>
+                                <p>Toggle the state between paused and running for the given animation on the given entity.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.AnimationProcessor.html"
+                                  title='type amethyst_animation::AnimationProcessor'>AnimationProcessor</a></td>
+                           <td class='docblock-short'>
+                                <p>Asset storage processor for <code>Animation</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.SamplerProcessor.html"
+                                  title='type amethyst_animation::SamplerProcessor'>SamplerProcessor</a></td>
+                           <td class='docblock-short'>
+                                <p>Asset storage processor for <code>Sampler</code></p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "amethyst_animation";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

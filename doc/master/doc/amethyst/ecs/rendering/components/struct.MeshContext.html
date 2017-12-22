@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MeshContext` struct in crate `amethyst`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MeshContext">
+
+    <title>amethyst::ecs::rendering::components::MeshContext - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <a href='../../../../amethyst/index.html'><img src='https://tinyurl.com/jtmm43a' alt='logo' width='100'></a>
+        <p class='location'>Struct MeshContext</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../../index.html'>amethyst</a>::<wbr><a href='../../index.html'>ecs</a>::<wbr><a href='../index.html'>rendering</a>::<wbr><a href='index.html'>components</a></p><script>window.sidebarCurrent = {name: 'MeshContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>amethyst</a>::<wbr><a href='../../index.html'>ecs</a>::<wbr><a href='../index.html'>rendering</a>::<wbr><a href='index.html'>components</a>::<wbr><a class="struct" href=''>MeshContext</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#64-67' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct MeshContext { /* fields omitted */ }</pre><div class='docblock'><p>Context to create meshes from vertices</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Context' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../../../amethyst_assets/asset/trait.Context.html" title="trait amethyst_assets::asset::Context">Context</a> for <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshContext.html" title="struct amethyst::ecs::rendering::components::MeshContext">MeshContext</a></code><a href='#impl-Context' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#118-182' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Asset' class="type"><span id='Asset.t' class='invisible'><code>type <a href='../../../../amethyst_assets/asset/trait.Context.html#associatedtype.Asset' class="type">Asset</a> = <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshComponent.html" title="struct amethyst::ecs::rendering::components::MeshComponent">MeshComponent</a></code></span></h4>
+<div class='docblock'><p>The asset type this context can produce.</p>
+</div><h4 id='associatedtype.Data' class="type"><span id='Data.t' class='invisible'><code>type <a href='../../../../amethyst_assets/asset/trait.Context.html#associatedtype.Data' class="type">Data</a> = <a class="enum" href="../../../../amethyst/ecs/rendering/components/enum.Vertices.html" title="enum amethyst::ecs::rendering::components::Vertices">Vertices</a></code></span></h4>
+<div class='docblock'><p>The <code>Data</code> type the asset can be created from.</p>
+</div><h4 id='associatedtype.Error' class="type"><span id='Error.t' class='invisible'><code>type <a href='../../../../amethyst_assets/asset/trait.Context.html#associatedtype.Error' class="type">Error</a> = <a class="type" href="../../../../amethyst/ecs/rendering/components/type.MeshError.html" title="type amethyst::ecs::rendering::components::MeshError">MeshError</a></code></span></h4>
+<div class='docblock'><p>The error that may be returned from <code>create_asset</code>.</p>
+</div><h4 id='associatedtype.Result' class="type"><span id='Result.t' class='invisible'><code>type <a href='../../../../amethyst_assets/asset/trait.Context.html#associatedtype.Result' class="type">Result</a> = <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshFuture.html" title="struct amethyst::ecs::rendering::components::MeshFuture">MeshFuture</a></code></span></h4>
+<div class='docblock'><p>The result type for loading an asset. This can also be a future (or anything that implements <code>IntoFuture</code>). <a href="../../../../amethyst_assets/asset/trait.Context.html#associatedtype.Result">Read more</a></p>
+</div><h4 id='method.category' class="method"><span id='category.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#tymethod.category' class='fnname'>category</a>(&amp;self) -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#124-126' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>A small keyword for which category these assets belongs to. <a href="../../../../amethyst_assets/asset/trait.Context.html#tymethod.category">Read more</a></p>
+</div><h4 id='method.create_asset' class="method"><span id='create_asset.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#tymethod.create_asset' class='fnname'>create_asset</a>(&amp;self, vertices: <a class="enum" href="../../../../amethyst/ecs/rendering/components/enum.Vertices.html" title="enum amethyst::ecs::rendering::components::Vertices">Vertices</a>, _: &amp;<a class="struct" href="https://docs.rs/rayon-core/1.3/rayon_core/thread_pool/struct.ThreadPool.html" title="struct rayon_core::thread_pool::ThreadPool">ThreadPool</a>) -&gt; <a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshFuture.html" title="struct amethyst::ecs::rendering::components::MeshFuture">MeshFuture</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#128-147' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Provides the conversion from the data format to the actual asset.</p>
+</div><h4 id='method.cache' class="method"><span id='cache.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#method.cache' class='fnname'>cache</a>(&amp;self, spec: <a class="struct" href="../../../../amethyst_assets/asset/struct.AssetSpec.html" title="struct amethyst_assets::asset::AssetSpec">AssetSpec</a>, asset: <a class="struct" href="../../../../amethyst_assets/asset/struct.AssetFuture.html" title="struct amethyst_assets::asset::AssetFuture">AssetFuture</a>&lt;<a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshComponent.html" title="struct amethyst::ecs::rendering::components::MeshComponent">MeshComponent</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#149-151' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Notifies about an asset load. This is can be used to cache the asset. To return a cached asset, see the <code>retrieve</code> function. <a href="../../../../amethyst_assets/asset/trait.Context.html#method.cache">Read more</a></p>
+</div><h4 id='method.retrieve' class="method"><span id='retrieve.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#method.retrieve' class='fnname'>retrieve</a>(&amp;self, spec: &amp;<a class="struct" href="../../../../amethyst_assets/asset/struct.AssetSpec.html" title="struct amethyst_assets::asset::AssetSpec">AssetSpec</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../../../amethyst_assets/asset/struct.AssetFuture.html" title="struct amethyst_assets::asset::AssetFuture">AssetFuture</a>&lt;<a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshComponent.html" title="struct amethyst::ecs::rendering::components::MeshComponent">MeshComponent</a>&gt;&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#153-155' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns <code>Some</code> cached value if possible, otherwise <code>None</code>. <a href="../../../../amethyst_assets/asset/trait.Context.html#method.retrieve">Read more</a></p>
+</div><h4 id='method.update' class="method"><span id='update.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#tymethod.update' class='fnname'>update</a>(&amp;self, spec: &amp;<a class="struct" href="../../../../amethyst_assets/asset/struct.AssetSpec.html" title="struct amethyst_assets::asset::AssetSpec">AssetSpec</a>, asset: <a class="struct" href="../../../../amethyst_assets/asset/struct.AssetFuture.html" title="struct amethyst_assets::asset::AssetFuture">AssetFuture</a>&lt;<a class="struct" href="../../../../amethyst/ecs/rendering/components/struct.MeshComponent.html" title="struct amethyst::ecs::rendering::components::MeshComponent">MeshComponent</a>&gt;)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#157-170' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Updates an asset after it&#39;s been reloaded. <a href="../../../../amethyst_assets/asset/trait.Context.html#tymethod.update">Read more</a></p>
+</div><h4 id='method.clear' class="method"><span id='clear.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#method.clear' class='fnname'>clear</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#172-177' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gives a hint that several assets may have been released recently. <a href="../../../../amethyst_assets/asset/trait.Context.html#method.clear">Read more</a></p>
+</div><h4 id='method.clear_all' class="method"><span id='clear_all.v' class='invisible'><code>fn <a href='../../../../amethyst_assets/asset/trait.Context.html#method.clear_all' class='fnname'>clear_all</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../../src/amethyst/ecs/rendering/components/mesh.rs.html#179-181' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Request for clearing the whole cache.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "amethyst";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

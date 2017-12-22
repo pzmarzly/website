@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LocalTransform","Local position, rotation, and scale (from parent if it exists)."],["Parent","Component for defining a parent entity."],["Transform","Performs a global transformation on the entity (transform from origin)."]]});
